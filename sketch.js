@@ -15,3 +15,11 @@ function setup() {
     text("Reroll All",508,170);
 
 }
+
+function mouseClicked() {
+
+//check where mouse is
+//set this.x & this.y off that
+//add or erase skill
+
+}
