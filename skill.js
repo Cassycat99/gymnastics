@@ -16,15 +16,14 @@ class Skill {
 
         //image
 
-        drawSkill()
+        this.drawSkill()
 
     }
 
 
 drawSkill(){
         fill(this.fillColor);
-        rect(this.x,this.y,this.width,this.height);
-        fill(color(42,104,112));   
+        rect(this.x,this.y,this.width,this.height);  
         
         
         //add to total point value w/ logic

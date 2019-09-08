@@ -25,14 +25,14 @@ function mouseClicked() {
         if (arrayOfRoutineSkills.length == 0){
              arrayOfRoutineSkills.push(new Skill(
                 "split leap forward",
-                a,
+                "a",
                 0,
                 "leap",
                 0,
                 0,
                 100,
                 100,
-                green
+                color(22,44,22)
             ));
              
             console.log(arrayOfRoutineSkills);
