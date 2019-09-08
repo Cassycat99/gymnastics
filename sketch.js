@@ -20,6 +20,25 @@ function setup() {
 
 function mouseClicked() {
 
+    if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200){
+    
+        if (arrayOfRoutineSkills.length == 0){
+             arrayOfRoutineSkills.push(new Skill(
+                "split leap forward",
+                a,
+                0,
+                "leap",
+                0,
+                0,
+                100,
+                100,
+                green
+            ));
+             
+            console.log(arrayOfRoutineSkills);
+         }
+
+
 //adding skill
 
 //check where mouse is
