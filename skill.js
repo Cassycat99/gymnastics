@@ -12,7 +12,6 @@ class Skill {
         this.height;
         this.width;
 
-        this.fillColor;
 
         //image
 
@@ -22,7 +21,7 @@ class Skill {
 
 
 drawSkill(){
-        fill(this.fillColor);
+        fill(200);
         rect(this.x,this.y,this.width,this.height);  
         
         

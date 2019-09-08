@@ -32,7 +32,6 @@ function mouseClicked() {
                 0,
                 100,
                 100,
-                color(22,44,22)
             ));
              
             console.log(arrayOfRoutineSkills);
