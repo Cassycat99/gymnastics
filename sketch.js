@@ -6,6 +6,7 @@ function setup() {
 	noStroke();
     background(color(122,244,222)); 
 
+    arrayOfRoutineSkills = [];
 
     rect(70, 100, 100, 100);
     rect(210, 100, 100, 100);
