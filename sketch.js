@@ -11,6 +11,8 @@ function setup() {
     fill(255);
     rect(70, 100, 100, 100);
 
+    //build skills[]
+    //display skills
     
 
 
@@ -21,14 +23,12 @@ function mouseClicked() {
     if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200){
     
         if (arrayOfRoutineSkills.length == 0){
-             arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",70,400,100,100));
-             
+             arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",50,400,100,100));
+            // arrayOfRoutineSkills.push(skills[]);
             console.log(arrayOfRoutineSkills);
          }
-
-         if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500){
-            arrayOfRoutineSkills[0].eraseSkill();
         }
+         
 
 //adding skill
 
@@ -37,5 +37,14 @@ function mouseClicked() {
 //arrayOfRoutineSkills.push(new Skill(find skill in library?));
 //or change this.x & this.y off mouse here?
 
+
+
+if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500){
+    arrayOfRoutineSkills[0].eraseSkill();
+    arrayOfRoutineSkills.pop();
+    console.log(arrayOfRoutineSkills);
 }
+
+
+
 }
