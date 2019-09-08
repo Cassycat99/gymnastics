@@ -2,7 +2,7 @@ new Skill(
     "split leap forward",
     a,
     0,
-    leap,
+    "leap",
     0,
     0,
     100,
