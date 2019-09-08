@@ -6,6 +6,14 @@ class Skill {
         this.salto; //Yes/No
         this.type; //Category (Mount, Leap, Jump, Dismount, etv)
 
+        this.x;
+        this.y;
+
+        this.height;
+        this.width;
+        
+        this.fillColor;
+
     }
 
    // functionGoesHere() { 
