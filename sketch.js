@@ -21,11 +21,14 @@ function mouseClicked() {
     if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200){
     
         if (arrayOfRoutineSkills.length == 0){
-             arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",50,400,100,100));
+             arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",70,400,100,100));
              
             console.log(arrayOfRoutineSkills);
          }
 
+         if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500){
+            arrayOfRoutineSkills[0].eraseSkill();
+        }
 
 //adding skill
 

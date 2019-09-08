@@ -33,8 +33,7 @@ drawSkill(){
 eraseSkill(){
     fill(canvasColor);
     rect(this.x,this.y,this.width,this.height);
-    fill(42,104,112);
-    rect(70,600,240,100);
+
     
     //take away from total point value w/ logic
     
