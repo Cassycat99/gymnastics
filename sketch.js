@@ -10,9 +10,7 @@ function setup() {
 
     fill(255);
     rect(70, 100, 100, 100);
-    rect(210, 100, 100, 100);
-    rect(490,100,240,100);
-    rect(70,600,240,100);
+
     
 
 
@@ -23,16 +21,7 @@ function mouseClicked() {
     if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200){
     
         if (arrayOfRoutineSkills.length == 0){
-             arrayOfRoutineSkills.push(new Skill(
-                "split leap forward",
-                "a",
-                0,
-                "leap",
-                0,
-                0,
-                100,
-                100,
-            ));
+             arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",50,400,100,100));
              
             console.log(arrayOfRoutineSkills);
          }

@@ -1,16 +1,16 @@
 class Skill {
-    constructor() {
+    constructor(name, letter, salto, type, x, y, height, width) {
 
-        this.name; //Name of skill
-        this.letter; //A, B, C (D, E, F)
-        this.salto; //Yes/No
-        this.type; //Category (Mount, Leap, Jump, Dismount, etc)
+        this.name = name; //Name of skill
+        this.letter = letter; //A, B, C (D, E, F)
+        this.salto = salto; //Yes/No 0/1
+        this.type = type; //Category (Mount, Leap, Jump, Dismount, etc)
 
-        this.x;
-        this.y;
+        this.x = x;
+        this.y = y;
 
-        this.height;
-        this.width;
+        this.height = height;
+        this.width = width;
 
 
         //image
