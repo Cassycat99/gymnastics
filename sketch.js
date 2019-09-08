@@ -22,6 +22,7 @@ function setup() {
 function mouseClicked() {
 
 //adding skill
+
 //check where mouse is
 //set this.x & this.y off that?
 //arrayOfRoutineSkills.push(new Skill(find skill in library?));
