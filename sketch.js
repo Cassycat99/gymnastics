@@ -1,3 +1,5 @@
+let arrayOfRoutineSkills;
+
 function setup() {
     createCanvas(800, 800);
 	canvasColor = color(122,244,222);
@@ -18,8 +20,10 @@ function setup() {
 
 function mouseClicked() {
 
+//adding skill
 //check where mouse is
-//set this.x & this.y off that
-//add or erase skill
+//set this.x & this.y off that?
+//arrayOfRoutineSkills.push(new Skill(find skill in library?));
+//or change this.x & this.y off mouse here?
 
 }

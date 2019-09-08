@@ -16,18 +16,21 @@ class Skill {
 
         //image
 
+        drawSkill()
+
     }
 
-   
-addSkill(){
-    fill(this.fillColor);
-    rect(this.x,this.y,this.width,this.height);
-    fill(color(42,104,112));   
-    
-    
-    //add to logic
-    
-}
+
+drawSkill(){
+        fill(this.fillColor);
+        rect(this.x,this.y,this.width,this.height);
+        fill(color(42,104,112));   
+        
+        
+        //add to total point value w/ logic
+        
+    }
+
 	
 eraseSkill(){
     fill(canvasColor);
@@ -35,7 +38,7 @@ eraseSkill(){
     fill(42,104,112);
     rect(70,600,240,100);
     
-    //take away from logic
+    //take away from total point value w/ logic
     
 }
 
