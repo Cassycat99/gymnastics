@@ -13,7 +13,7 @@ function setup() {
     rect(70, 100, 100, 100);
     fill(color(42,104,112));
     textSize(40);
-    text("leap",88,188);
+    text("leap",82,165);
 
     //prepopulate library of skills skills[]
     //draw library of skills
