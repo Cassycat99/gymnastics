@@ -10,6 +10,9 @@ function setup() {
 
     fill(255);
     rect(70, 100, 100, 100);
+    fill(color(42,104,112));
+    textSize(40);
+    text("leap",88,188);
 
     //build skills[]
     //display skills
@@ -27,6 +30,12 @@ function mouseClicked() {
             // arrayOfRoutineSkills.push(skills[]);
             console.log(arrayOfRoutineSkills);
          }
+
+         else if (arrayOfRoutineSkills.length == 1){
+            arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",210,400,100,100));
+           // arrayOfRoutineSkills.push(skills[]);
+           console.log(arrayOfRoutineSkills);
+        }
         }
          
 
@@ -40,11 +49,26 @@ function mouseClicked() {
 
 
 if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500){
+    
     arrayOfRoutineSkills[0].eraseSkill();
     arrayOfRoutineSkills.pop();
     console.log(arrayOfRoutineSkills);
+    
 }
 
+if (mouseX >= 210 && mouseX <= 310 && mouseY >= 400 && mouseY <= 500){
+    
+    if arrayOfRoutineSkills.length == 1{
+        arrayOfRoutineSkills[0].eraseSkill();
+    }
+    
+    else{
+    arrayOfRoutineSkills[1].eraseSkill();
+    }
+
+    arrayOfRoutineSkills.pop();
+    console.log(arrayOfRoutineSkills);
+}
 
 
 }
