@@ -58,7 +58,7 @@ if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500){
 
 if (mouseX >= 210 && mouseX <= 310 && mouseY >= 400 && mouseY <= 500){
     
-    if arrayOfRoutineSkills.length == 1{
+    if (arrayOfRoutineSkills.length == 1){
         arrayOfRoutineSkills[0].eraseSkill();
     }
     
