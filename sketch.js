@@ -17,30 +17,37 @@ function setup() {
 
     //prepopulate library of skills skills[]
     //draw library of skills
-    
-var arr = [
-	{name: "one"}, {name: "two"}, {name: "three"}
+
+    var arr = [
+        {
+            name: "one"
+        }, {
+            name: "two"
+        }, {
+            name: "three"
+        }
 ];
+    arr.push(new Skill("split leap forward", "a", 0, "leap", 50, 400, 100, 100));
 
-// Find Element in Array with a loop
-for(var x = 0; x < arr.length; x++){
-	if(arr[x].name === "two")
-  	console.log("Found Two");
-}
+    // Find Element in Array with a loop
+    for (var x = 0; x < arr.length; x++) {
+        if (arr[x].name === "spilt leap forward")
+            console.log("Found leap");
+    }
 
-// Find Element in Array with a funcion
-function isTwo(elem, index, arr){
-	return elem.name === "three";
-}
+    // Find Element in Array with a funcion
+    function isTwo(elem, index, arr) {
+        return elem.name === "spilt leap forward";
+    }
 
-console.log(arr.findIndex(isTwo));
+    console.log(arr.findIndex(isTwo));
 
 
 }
 
 function mouseClicked() {
 
-    
+
     let fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
     fruits.push("grape");
     fruits.push(new Skill("split leap forward", "a", 0, "leap", 50, 400, 100, 100));
@@ -66,6 +73,16 @@ function mouseClicked() {
 
     //change numbers to variables
     //if mouse is in skill, add skill
+
+    for (let i = 0; i < libraryOfSkills.length; i++) {
+        if (mouseX >= libraryOfSkills[i].x && mouseX <= libraryOfSkills[i].x && mouseY >= libraryOfSkills[i].y && mouseY <= libraryOfSkills[i].y) {
+            console.log("click");
+        }
+    }
+
+
+
+
     if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200) {
 
         if (arrayOfRoutineSkills.length == 0) {
@@ -85,6 +102,9 @@ function mouseClicked() {
             console.log(arrayOfRoutineSkills);
         }
     }
+
+
+
 
 
     //if mouse is in skill, remove skill
