@@ -41,8 +41,11 @@ function mouseClicked() {
     //change numbers to variables
     //if mouse is in skill, add skill
 
+    console.log(libraryOfSkills.length);
     for (let i = 0; i < libraryOfSkills.length; i++) {
-        if (mouseX >= libraryOfSkills[i].x && mouseX <= libraryOfSkills[i].x && mouseY >= libraryOfSkills[i].y && mouseY <= libraryOfSkills[i].y) {
+        console.log("fired");
+        
+        if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
             console.log("click");
         }
     }
