@@ -43,13 +43,12 @@ function mouseClicked() {
 
     console.log(libraryOfSkills.length);
     for (let i = 0; i < libraryOfSkills.length; i++) {
-        console.log("fired");
         
         if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
-            console.log("click");
+            arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",50,400,100,100));
         }
     }
-
+console.log(arrayOfRoutineSkills)
 
 
 
