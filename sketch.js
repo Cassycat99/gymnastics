@@ -8,24 +8,19 @@ function setup() {
 
     arrayOfRoutineSkills = [];
     libraryOfSkills = [];
-    fruits =[];
+
 
     //"library of skills"
     fill(255);
-    rect(70, 100, 100, 100);
-    fill(color(42, 104, 112));
-    textSize(40);
-    text("leap", 82, 165);
-
     //prepopulate library of skills skills[]
     //draw library of skills
 
     libraryOfSkills = [
-    new Skill("split leap forward","a",0,"leap",50,400,100,100),
-    new Skill("tuck jump","a",0,"jump",150,400,100,100)
+    new Skill("split leap forward","a",0,"leap",25,100,100,100),
+    new Skill("tuck jump","a",0,"jump",200,100,100,100)
 ]
     
-    fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
+
 
 }
 
@@ -33,18 +28,12 @@ function mouseClicked() {
 
 
 
-    fruits.push("grape");
-    fruits.push(new Skill("split leap forward", "a", 0, "leap", 50, 400, 100, 100));
-    console.log(fruits);
-    console.log("fruits array above");
+    //index = libraryOfSkills.findIndex(clickedSkill => clickedSkill.name === "tuck jump");
 
-
-    index = fruits.findIndex(skillz => skillz.name === "split leap forward");
-
-    console.log(index); // 3
-    console.log("index above of skill");
-    console.log(fruits[index]); // grape
-    console.log("skill above");
+    //console.log(index); // 3
+    //console.log("index above of skill");
+    //console.log(libraryOfSkills[index]); // grape
+    //console.log("skill above");
 
 
 
