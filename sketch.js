@@ -7,6 +7,8 @@ function setup() {
     background(color(122, 244, 222));
 
     arrayOfRoutineSkills = [];
+    libraryOfSkills = [];
+    fruits =[];
 
     //"library of skills"
     fill(255);
@@ -17,56 +19,32 @@ function setup() {
 
     //prepopulate library of skills skills[]
     //draw library of skills
-/*
-    var arr = [
-        {
-            name: "one"
-        }, {
-            name: "two"
-        }, {
-            name: "three"
-        }
-];
-    arr.push(new Skill("split leap forward", "a", 0, "leap", 50, 400, 100, 100));
 
-    // Find Element in Array with a loop
-    for (var x = 0; x < arr.length; x++) {
-        if (arr[x].name === "spilt leap forward")
-            console.log("Found leap");
-    }
-
-    // Find Element in Array with a funcion
-    function isTwo(elem, index, arr) {
-        return elem.name === "spilt leap forward";
-    }
-
-    console.log(arr.findIndex(isTwo));
-*/
+    libraryOfSkills = [
+    new Skill("split leap forward","a",0,"leap",50,400,100,100),
+    new Skill("tuck jump","a",0,"jump",150,400,100,100)
+]
+    
+    fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
 
 }
 
 function mouseClicked() {
 
 
-    let fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
+
     fruits.push("grape");
     fruits.push(new Skill("split leap forward", "a", 0, "leap", 50, 400, 100, 100));
     console.log(fruits);
     console.log("fruits array above");
 
-    let index = fruits.findIndex(fruitz => fruitz === "grape");
-
-    console.log(index); // 3
-    console.log("index above of grape");
-    console.log(fruits[index]); // grape
-    console.log("fruit above");
 
     index = fruits.findIndex(skillz => skillz.name === "split leap forward");
 
     console.log(index); // 3
     console.log("index above of skill");
     console.log(fruits[index]); // grape
-    console.log("fruit above");
+    console.log("skill above");
 
 
 
