@@ -17,7 +17,7 @@ function setup() {
 
     //prepopulate library of skills skills[]
     //draw library of skills
-
+/*
     var arr = [
         {
             name: "one"
@@ -41,7 +41,7 @@ function setup() {
     }
 
     console.log(arr.findIndex(isTwo));
-
+*/
 
 }
 
@@ -61,7 +61,7 @@ function mouseClicked() {
     console.log(fruits[index]); // grape
     console.log("fruit above");
 
-    index = fruits.findIndex(fruitz => fruitz === "split leap forward");
+    index = fruits.findIndex(skillz => skillz.name === "split leap forward");
 
     console.log(index); // 3
     console.log("index above of skill");
