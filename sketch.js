@@ -9,6 +9,7 @@ function setup() {
     arrayOfRoutineSkills = [];
     libraryOfSkills = [];
 
+    let lastClick;
 
     //"library of skills"
     fill(255);
@@ -16,11 +17,20 @@ function setup() {
     //draw library of skills
 
     libraryOfSkills = [
-    new Skill("split leap forward","a",0,"leap",25,100,100,100),
-    new Skill("tuck jump","a",0,"jump",200,100,100,100)
+    new Skill("split leap forward", "a", 0, "leap", 25, 100, 100, 100),
+    new Skill("tuck jump", "a", 0, "jump", 200, 100, 100, 100)
 ]
-    
 
+    arrayOfRoutineSkills = [
+     new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
+        new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
+         new Skill("smissing skill", "0", 0, "empty", 400, 575, 100, 100),
+    ]
 
 }
 
@@ -43,14 +53,26 @@ function mouseClicked() {
 
     console.log(libraryOfSkills.length);
     for (let i = 0; i < libraryOfSkills.length; i++) {
-        
+
         if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
-            arrayOfRoutineSkills.push(libraryOfSkills[i]);
-        }
+            lastClick= libraryOfSkills[i];
+        }    
     }
-console.log(arrayOfRoutineSkills)
+    
+    for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
 
+        if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+            
+            arrayOfRoutineSkills[i] = lastClick;
+            arrayOfRoutineSkills[i].drawSkill;
+        }    
+    }
+    
+    
+    console.log(lastClick);
+    console.log(arrayOfRoutineSkills);
 
+/*
 
     if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200) {
 
@@ -100,7 +122,7 @@ console.log(arrayOfRoutineSkills)
 
         console.log(arrayOfRoutineSkills);
     }
-
+*/
 
 
     //adding skill
