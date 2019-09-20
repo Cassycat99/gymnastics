@@ -37,32 +37,35 @@ function setup() {
 
 function mouseClicked() {
     //the x and y of the skill in the library is changing
-    
+
     //need to add something to handle if nothing is clicked first
 
     //ADDING SKILLS
     //on mouse click, if the mouse is in skill in the library
     //the skill will be saved to variable lastClick
     //to then be clicked into its desired location
+console.log(libraryOfSkills[0].y);
+    
 
-console.log(libraryOfSkills);
     if (mouseY <= 300) {
+        console.log("above clicked");
+        console.log(libraryOfSkills[0].y);
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
-                console.log(lastClick);
-                console.log(libraryOfSkills);
             }
         }
     }
-console.log(libraryOfSkills);
+
+
 
     //checks if mouse if in routine of skills
     //check which space the mouse is within
     //sets space to variable LastClick
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
-        
+        console.log("below clicked");
+        console.log(libraryOfSkills[0].y);
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
 
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
