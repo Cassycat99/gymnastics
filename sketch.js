@@ -53,6 +53,7 @@ console.log(libraryOfSkills[0].y);
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
+                 console.log(libraryOfSkills[0].y);
             }
         }
     }
