@@ -36,6 +36,8 @@ function setup() {
 }
 
 function mouseClicked() {
+    //the x and y of the skill in the library is changing
+    
     //need to add something to handle if nothing is clicked first
 
     //ADDING SKILLS
@@ -45,22 +47,22 @@ function mouseClicked() {
 
 console.log(libraryOfSkills);
     if (mouseY <= 300) {
-        console.log("1");
         for (let i = 0; i < libraryOfSkills.length; i++) {
-            console.log("2");
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
                 console.log(lastClick);
+                console.log(libraryOfSkills);
             }
         }
     }
-
+console.log(libraryOfSkills);
 
     //checks if mouse if in routine of skills
     //check which space the mouse is within
     //sets space to variable LastClick
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
+        
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
 
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
@@ -81,68 +83,6 @@ console.log(libraryOfSkills);
     }
 
 
-    //   console.log(lastClick);
-    //  console.log(arrayOfRoutineSkills);
-
-    /*
-
-        if (mouseX >= 70 && mouseX <= 170 && mouseY >= 100 && mouseY <= 200) {
-
-            if (arrayOfRoutineSkills.length == 0) {
-                //arrayOfRoutineSkills.push(new Skill("split leap forward","a",0,"leap",50,400,100,100));
-
-                //let index;
-                //index = libraryOfSkills.findIndex(s => s ==="spilt leap forward");
-                // console.log(index);
-                //console.log(libraryOfSkills.findIndex("split leap forward"));
-
-                //find index
-                //arrayOfRoutineSkills.push(libraryOfSkills[i]);
-                //console.log(arrayOfRoutineSkills);
-            } else if (arrayOfRoutineSkills.length == 1) {
-                arrayOfRoutineSkills.push(new Skill("split leap forward", "a", 0, "leap", 210, 400, 100, 100));
-                // arrayOfRoutineSkills.push(libraryOfSkills[][]);
-                console.log(arrayOfRoutineSkills);
-            }
-        }
-
-
-
-
-
-        //if mouse is in skill, remove skill
-        if (mouseX >= 70 && mouseX <= 170 && mouseY >= 400 && mouseY <= 500) {
-
-            arrayOfRoutineSkills[0].eraseSkill();
-            arrayOfRoutineSkills.shift();
-            console.log(arrayOfRoutineSkills);
-
-        }
-
-        if (mouseX >= 210 && mouseX <= 310 && mouseY >= 400 && mouseY <= 500) {
-
-
-            if (arrayOfRoutineSkills.length == 1) {
-
-                arrayOfRoutineSkills[0].eraseSkill();
-                arrayOfRoutineSkills.shift();
-            } else {
-                arrayOfRoutineSkills[1].eraseSkill();
-                arrayOfRoutineSkills.pop();
-            }
-
-
-            console.log(arrayOfRoutineSkills);
-        }
-    */
-
-
-    //adding skill
-
-    //check where mouse is
-    //set this.x & this.y off that?
-    //arrayOfRoutineSkills.push(new Skill(find skill in library?));
-    //or change this.x & this.y off mouse here?
 
 
 }
