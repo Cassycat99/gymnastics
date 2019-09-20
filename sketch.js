@@ -63,9 +63,17 @@ function mouseClicked() {
 
         if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
 
-            arrayOfRoutineSkills[i] = lastClick;
-            //need to change this.x and this.y before redrawing
-            arrayOfRoutineSkills[i].drawSkill;
+            
+            //change x y of last click to previous x and y of routine to update location
+            lastClick.x = arrayOfRoutineSkills[i].x;
+            lastClick.y = arrayOfRoutineSkills[i].y;
+                        
+            //change routine skill to be equal to previous click with new x and y
+            arrayOfRoutineSkills[i] = lastClick;    
+            console.log(lastClick);
+            
+            //draw replacement skill
+            arrayOfRoutineSkills[i].drawSkill();
         }
     }
     }
