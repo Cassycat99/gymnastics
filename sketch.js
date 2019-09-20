@@ -30,57 +30,59 @@ function setup() {
          new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
          new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
          new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
-         new Skill("smissing skill", "0", 0, "empty", 400, 575, 100, 100),
+         new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
     ]
 
 }
 
 function mouseClicked() {
-//need to add something to handle if nothing is clicked first
+    //need to add something to handle if nothing is clicked first
 
     //ADDING SKILLS
     //on mouse click, if the mouse is in skill in the library
     //the skill will be saved to variable lastClick
     //to then be clicked into its desired location
 
-    console.log(libraryOfSkills.length);
-
-    
+console.log(libraryOfSkills);
+    if (mouseY <= 300) {
+        console.log("1");
         for (let i = 0; i < libraryOfSkills.length; i++) {
-
+            console.log("2");
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
+                console.log(lastClick);
             }
         }
-    
+    }
+
 
     //checks if mouse if in routine of skills
     //check which space the mouse is within
     //sets space to variable LastClick
-    
+
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
-    for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
 
-        if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+            if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
 
-            
-            //change x y of last click to previous x and y of routine to update location
-            lastClick.x = arrayOfRoutineSkills[i].x;
-            lastClick.y = arrayOfRoutineSkills[i].y;
-                        
-            //change routine skill to be equal to previous click with new x and y
-            arrayOfRoutineSkills[i] = lastClick;    
-            console.log(lastClick);
-            
-            //draw replacement skill
-            arrayOfRoutineSkills[i].drawSkill();
+
+                //change x y of last click to previous x and y of routine to update location
+                lastClick.x = arrayOfRoutineSkills[i].x;
+                lastClick.y = arrayOfRoutineSkills[i].y;
+
+                //change routine skill to be equal to previous click with new x and y
+                arrayOfRoutineSkills[i] = lastClick;
+                //console.log(lastClick);
+
+                //draw replacement skill
+                arrayOfRoutineSkills[i].drawSkill();
+            }
         }
     }
-    }
 
 
-    console.log(lastClick);
-    console.log(arrayOfRoutineSkills);
+    //   console.log(lastClick);
+    //  console.log(arrayOfRoutineSkills);
 
     /*
 

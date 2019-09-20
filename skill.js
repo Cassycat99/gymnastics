@@ -26,9 +26,9 @@ drawSkill(){
         rect(this.x,this.y,this.width,this.height);  
         
         fill(color(42,104,112));
-    textSize(20);
+    textSize(10);
     text(this.name,this.x+18,this.y+88);
-       console.log(this.name); 
+        
         //add to total point value w/ logic
         
     }
