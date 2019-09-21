@@ -13,6 +13,7 @@ function setup() {
     let lastClick;
     let routineX;
     let routineY;
+   
 
     //"library of skills"
     fill(255);
@@ -74,21 +75,28 @@ function mouseClicked() {
 
                 //change x y of last click to previous x and y of routine to update location          
                 routineY = arrayOfRoutineSkills[i].y; //saves orignal Y
-                routineX = arrayOfRoutineSkills[i].x; //saves orignal X
+               // routineX = arrayOfRoutineSkills[i].x; //saves orignal X
  
                 //change routine skill to be equal to previous click
-                arrayOfRoutineSkills[i] = lastClick;
+                arrayOfRoutineSkills[i].name = lastClick.name;
+                console.log(arrayOfRoutineSkills[i].y);
+                console.log(lastClick.y); //400
+                //arrayOfRoutineSkills[i].y = lastClick.y;
                 
+                console.log(arrayOfRoutineSkills[i].y);
+                console.log(lastClick.y); 
 
                 //change x and y to be orignal x and y
-                
-                
+                //CHANGE TO CHANGE ASPECTS
                 //libraryOfSkills[i].y IS CHANGING HERE AT 88
                 console.log(libraryOfSkills[i].y);
-                arrayOfRoutineSkills[i].y = routineY; //routineY = 400
+             //   arrayOfRoutineSkills[i].y = routineY; //routineY = 400
                 console.log(libraryOfSkills[i].y);
-              
-                arrayOfRoutineSkills[i].x = routineX;
+                console.log(libraryOfSkills);
+                console.log(arrayOfRoutineSkills);
+
+                
+              //  arrayOfRoutineSkills[i].x = routineX;
 
 
                 
