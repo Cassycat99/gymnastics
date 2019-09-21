@@ -72,42 +72,13 @@ function mouseClicked() {
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
 
-
-                //change x y of last click to previous x and y of routine to update location          
-                routineY = arrayOfRoutineSkills[i].y; //saves orignal Y
-               // routineX = arrayOfRoutineSkills[i].x; //saves orignal X
- 
+                //Changed variables rather than full replace because of errors
                 //change routine skill to be equal to previous click
                 arrayOfRoutineSkills[i].name = lastClick.name;
-                console.log(arrayOfRoutineSkills[i].y);
-                console.log(lastClick.y); //400
-                //arrayOfRoutineSkills[i].y = lastClick.y;
-                
-                console.log(arrayOfRoutineSkills[i].y);
-                console.log(lastClick.y); 
-
-                //change x and y to be orignal x and y
-                //CHANGE TO CHANGE ASPECTS
-                //libraryOfSkills[i].y IS CHANGING HERE AT 88
-                console.log(libraryOfSkills[i].y);
-             //   arrayOfRoutineSkills[i].y = routineY; //routineY = 400
-                console.log(libraryOfSkills[i].y);
-                console.log(libraryOfSkills);
-                console.log(arrayOfRoutineSkills);
-
-                
-              //  arrayOfRoutineSkills[i].x = routineX;
-
-
-                
-                
-                //lastClick.x = arrayOfRoutineSkills[i].x;
-                //lastClick.y = arrayOfRoutineSkills[i].y;
-
-                
-                //console.log(lastClick);
-
-                //draw replacement skill
+                arrayOfRoutineSkills[i].letter = lastClick.letter;
+                arrayOfRoutineSkills[i].salto = lastClick.salto;
+                arrayOfRoutineSkills[i].type = lastClick.type;
+                console.log(arrayOfRoutineSkills)
                 arrayOfRoutineSkills[i].drawSkill();
             }
         }
