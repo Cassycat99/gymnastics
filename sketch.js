@@ -72,29 +72,31 @@ function mouseClicked() {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
 
 
-                //change x y of last click to previous x and y of routine to update location
-                console.log(lastClick.y);
+                //change x y of last click to previous x and y of routine to update location          
+                routineY = arrayOfRoutineSkills[i].y; //saves orignal Y
+                routineX = arrayOfRoutineSkills[i].x; //saves orignal X
+ 
+                //change routine skill to be equal to previous click
+                arrayOfRoutineSkills[i] = lastClick;
                 
-                routineY = arrayOfRoutineSkills[i].y;
-                
-                console.log(routineY);
-                
-                arrayOfRoutineSkills[i].y = lastClick;
-                console.log(arrayOfRoutineSkills[i]);
-                console.log(libraryOfSkills[0].y);
+
+                //change x and y to be orignal x and y
                 
                 
-                console.log(lastClick.y);
-                            
-                arrayOfRoutineSkills[i].y = routineY;
-                console.log(arrayOfRoutineSkills[i].y);
+                //libraryOfSkills[i].y IS CHANGING HERE AT 88
+                console.log(libraryOfSkills[i].y);
+                arrayOfRoutineSkills[i].y = routineY; //routineY = 400
+                console.log(libraryOfSkills[i].y);
+              
+                arrayOfRoutineSkills[i].x = routineX;
+
+
                 
                 
                 //lastClick.x = arrayOfRoutineSkills[i].x;
                 //lastClick.y = arrayOfRoutineSkills[i].y;
 
-                //change routine skill to be equal to previous click with new x and y
-                arrayOfRoutineSkills[i] = lastClick;
+                
                 //console.log(lastClick);
 
                 //draw replacement skill
