@@ -12,7 +12,7 @@ class Skill {
         this.height = height;
         this.width = width;
 
-        
+
 
         //image
 
@@ -21,25 +21,31 @@ class Skill {
     }
 
 
-drawSkill(){
+    drawSkill() {
         fill(200);
-        rect(this.x,this.y,this.width,this.height);  
-        
-        fill(color(42,104,112));
-    textSize(10);
-    text(this.name,this.x+18,this.y+88);
-        
+        rect(this.x, this.y, this.width, this.height);
+
+        fill(color(42, 104, 112));
+        textSize(10);
+        text(this.name, this.x + 18, this.y + 88);
+
         //add to total point value w/ logic
-        
+
     }
 
-	
-eraseSkill(){
-    fill(canvasColor);
-    rect(this.x,this.y,this.width,this.height);
-    
-    //take away from total point value w/ logic
-    
-}
+
+    eraseSkill() {
+        fill(canvasColor);
+        rect(this.x - 5, this.y - 5, this.width + 10, this.height + 10);
+
+        //take away from total point value w/ logic
+
+    }
+
+    drawHighlight() {
+        fill(300);
+        rect(this.x - 5, this.y - 5, this.width + 10, this.height + 10);
+        drawSkill();
+    }
 
 }
