@@ -13,7 +13,7 @@ function setup() {
     let lastClick;
     let routineX;
     let routineY;
-   
+
 
     //"library of skills"
     fill(255);
@@ -55,10 +55,12 @@ function mouseClicked() {
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
-                
+
                 //draws highlight around routine
-                for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-                    arrayOfRoutineSkills[i].drawHighlight();
+                for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
+                    arrayOfRoutineSkills[j].drawHighlight();
+                    libraryOfSkills[i].drawHighlight();
+
                 }
             }
         }
@@ -71,12 +73,18 @@ function mouseClicked() {
     //sets space to variable LastClick
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
-        
+
+        //erases and redraws skill in library to remove highlight
+        lastClick.eraseSkill();
+        lastClick.drawSkill();
+
         //removes highlight by erasing all skills and redrawing them
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             arrayOfRoutineSkills[i].eraseSkill();
             arrayOfRoutineSkills[i].drawSkill();
         }
+
+
 
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {

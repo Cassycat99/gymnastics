@@ -23,6 +23,7 @@ class Skill {
 
     drawSkill() {
         fill(200);
+        
         rect(this.x, this.y, this.width, this.height);
 
         fill(color(42, 104, 112));
