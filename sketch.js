@@ -40,7 +40,6 @@ function setup() {
 
 
 function mouseClicked() {
-    //the x and y of the skill in the library is changing
 
     //need to add something to handle if nothing is clicked first
 
