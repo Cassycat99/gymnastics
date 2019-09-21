@@ -45,7 +45,7 @@ class Skill {
     drawHighlight() {
         fill(300);
         rect(this.x - 5, this.y - 5, this.width + 10, this.height + 10);
-        drawSkill();
+        this.drawSkill();
     }
 
 }
