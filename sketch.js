@@ -41,7 +41,7 @@ function setup() {
 
 
 function mouseClicked() {
-    console.log(state);
+    
 
     //need to add something to handle if nothing is clicked first
 
@@ -53,7 +53,7 @@ function mouseClicked() {
 
 
 
-    if (mouseY <= 300) { //checks mouse location
+   
         if (state === "static") { //checks state (errored when included in if statement above)
 
             for (let i = 0; i < libraryOfSkills.length; i++) {
@@ -71,7 +71,7 @@ function mouseClicked() {
                     }
                 }
             }
-        }
+       
         console.log(state);
         if (state === "focus") {
             console.log(state);
@@ -119,6 +119,6 @@ function mouseClicked() {
         }
     }
 
-    console.log(state);
+    
 
 }
