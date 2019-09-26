@@ -1,18 +1,16 @@
-let arrayOfRoutineSkills;
+//defining global varaibles 
+let arrayOfRoutineSkills = [];
+let libraryOfSkills = [];
+let state; //static, in focus
+let lastClick;
+let routineX;
+let routineY;
 
 function setup() {
     createCanvas(800, 800);
     canvasColor = color(122, 244, 222);
     noStroke();
     background(color(122, 244, 222));
-
-    arrayOfRoutineSkills = [];
-    libraryOfSkills = [];
-
-    let state; //static, in focus
-    let lastClick;
-    let routineX;
-    let routineY;
 
 
     //"library of skills"
@@ -44,7 +42,7 @@ function setup() {
 
 function mouseClicked() {
     //console.log(state);
-    
+
     //need to add something to handle if nothing is clicked first
 
     //ADDING SKILLS
@@ -74,7 +72,7 @@ function mouseClicked() {
                 }
             }
         }
-console.log(state);
+        console.log(state);
         if (state === "focus") {
             console.log(state);
             console.log("fired");
