@@ -30,7 +30,7 @@ function setup() {
         new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
         new Skill("pike jump", "b", 0, "jump", (x + 2*width + 2*incredment), y, height, width)
 ]
-    console.log(libraryOfSkills);
+    
 
     arrayOfRoutineSkills = [
      new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
@@ -49,7 +49,7 @@ function setup() {
 
 
 function mouseClicked() {
-
+    console.log(state);
 
     //need to add something to handle if skill in library is clicked followed by another skill in the library
     //need to add swap
@@ -87,7 +87,7 @@ function mouseClicked() {
     //check which space the mouse is within
     //sets space to variable LastClick
     else if (state === "focus") {
-
+        state = "static"
         //erases and redraws skill in library to remove highlight
         lastClick.eraseSkill();
         lastClick.drawSkill();
@@ -111,14 +111,12 @@ function mouseClicked() {
                 arrayOfRoutineSkills[i].type = lastClick.type;
                 console.log(arrayOfRoutineSkills)
                 arrayOfRoutineSkills[i].drawSkill();
-                console.log(state);
-                state = "static"
-                console.log(state);
+                
             }
         }
     }
 
-
+console.log(state);
 
 
 }
