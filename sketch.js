@@ -24,11 +24,6 @@ function setup() {
     //prepopulate library of skills skills[]
     //draw library of skills
 
-    let x = 25;
-    let y = 100;
-    let incredment = 50;
-    let height = 100;
-    let width = 100;
 
     libraryOfSkills = [
         new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
