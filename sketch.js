@@ -83,6 +83,22 @@ function mouseClicked() {
         
         //Add if static and click is inside skill in routine for swap here
         
+        /* //WIP, checks mouse location, does white highlight on skill selected and other skills, changes state
+        //need to add color change for highlight
+        //need to add variable for swap
+        
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+                lastClick = arrayOfRoutineSkills[i];
+                state = "focus";
+                arrayOfRoutineSkills[i].drawHighlight();
+                
+                for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
+                    arrayOfRoutineSkills[j].drawHighlight();
+                }
+            }
+            
+        }*/
 
     }
 
