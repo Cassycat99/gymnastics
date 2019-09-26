@@ -18,11 +18,8 @@ function setup() {
     noStroke();
     background(color(122, 244, 222));
 
-
-    //"library of skills"
     fill(255);
-    //prepopulate library of skills skills[]
-    //draw library of skills
+
 
 
     libraryOfSkills = [
@@ -62,7 +59,7 @@ function mouseClicked() {
 
 
 
-    if (state === "static") { //checks state (errored when included in if statement above)
+    if (state === "static") { //checks state when mouse is clicked
 
         
         //IF Static and clicked inside of a skill in the library
