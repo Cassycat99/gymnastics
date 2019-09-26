@@ -43,7 +43,8 @@ function setup() {
 function mouseClicked() {
 
 
-    //need to add something to handle if nothing is clicked first
+    //need to add something to handle if skill in library is clicked followed by another skill in the library
+    //need to add swap
 
     //ADDING SKILLS
     //on mouse click, if the mouse is in skill in the library
