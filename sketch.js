@@ -64,6 +64,8 @@ function mouseClicked() {
 
     if (state === "static") { //checks state (errored when included in if statement above)
 
+        
+        //IF Static and clicked inside of a skill in the library
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
@@ -77,6 +79,10 @@ function mouseClicked() {
                 }
             }
         }
+        
+        
+        //Add if static and click is inside skill in routine for swap here
+        
 
     }
 
