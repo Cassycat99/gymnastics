@@ -9,7 +9,7 @@ function setup() {
     arrayOfRoutineSkills = [];
     libraryOfSkills = [];
 
-    let state = "static"; //static, in focus
+    let state; //static, in focus
     let lastClick;
     let routineX;
     let routineY;
@@ -37,13 +37,14 @@ function setup() {
          new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
     ]
 
-
+    state = "static"; //state is not defined at 46 but defined here??
 
 }
 
 
 function mouseClicked() {
-
+    //console.log(state);
+    
     //need to add something to handle if nothing is clicked first
 
     //ADDING SKILLS
@@ -55,24 +56,27 @@ function mouseClicked() {
 
 
     if (mouseY <= 300) { //checks mouse location
-        if (state = "static") { //checks state (errored when included in if statement above)
+        if (state === "static") { //checks state (errored when included in if statement above)
 
             for (let i = 0; i < libraryOfSkills.length; i++) {
                 if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                     lastClick = libraryOfSkills[i];
                     console.log(state);
-                        state = "focus";
-                        console.log(state);
+                    state = "focus";
+                    console.log(state);
 
                     //draws highlight around routine
                     for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
                         arrayOfRoutineSkills[j].drawHighlight();
                         libraryOfSkills[i].drawHighlight();
-                        
+
                     }
                 }
             }
-        } else {
+        }
+console.log(state);
+        if (state === "focus") {
+            console.log(state);
             console.log("fired");
         }
     }
@@ -84,7 +88,7 @@ function mouseClicked() {
     //sets space to variable LastClick
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
-        if (state = "focus") {
+        if (state === "focus") {
 
             //erases and redraws skill in library to remove highlight
             lastClick.eraseSkill();
