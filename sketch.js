@@ -69,12 +69,6 @@ function mouseClicked() {
                 }
             }
         }
-
-        console.log(state);
-        if (state === "focus") {
-            console.log(state);
-            console.log("fired");
-        }
     }
 
 
@@ -83,8 +77,7 @@ function mouseClicked() {
     //check which space the mouse is within
     //sets space to variable LastClick
 
-    if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
-        if (state === "focus") {
+else if (state === "focus") {
 
             //erases and redraws skill in library to remove highlight
             lastClick.eraseSkill();
@@ -115,7 +108,7 @@ function mouseClicked() {
                 }
             }
         }
-    }
+
 
 
 
