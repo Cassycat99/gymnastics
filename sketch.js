@@ -56,23 +56,23 @@ function mouseClicked() {
 
     if (mouseY <= 300) { //checks mouse location
         if (state = "static") { //checks state (errored when included in if statement above)
-            console.log(state);
-            state = "focus";
-            console.log(state);
+
             for (let i = 0; i < libraryOfSkills.length; i++) {
                 if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                     lastClick = libraryOfSkills[i];
+                    console.log(state);
+                        state = "focus";
+                        console.log(state);
 
                     //draws highlight around routine
                     for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
                         arrayOfRoutineSkills[j].drawHighlight();
                         libraryOfSkills[i].drawHighlight();
+                        
                     }
                 }
             }
-        }
-        
-        else{
+        } else {
             console.log("fired");
         }
     }
@@ -85,9 +85,7 @@ function mouseClicked() {
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
         if (state = "focus") {
-            console.log(state);
-            state = "static"
-            console.log(state);
+
             //erases and redraws skill in library to remove highlight
             lastClick.eraseSkill();
             lastClick.drawSkill();
@@ -111,11 +109,14 @@ function mouseClicked() {
                     arrayOfRoutineSkills[i].type = lastClick.type;
                     console.log(arrayOfRoutineSkills)
                     arrayOfRoutineSkills[i].drawSkill();
+                    console.log(state);
+                    state = "static"
+                    console.log(state);
                 }
             }
         }
     }
 
-
+    console.log(state);
 
 }
