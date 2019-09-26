@@ -22,7 +22,8 @@ function setup() {
 
     libraryOfSkills = [
     new Skill("split leap forward", "a", 0, "leap", 25, 100, 100, 100),
-   new Skill("tuck jump", "a", 0, "jump", 200, 100, 100, 100)
+   new Skill("tuck jump", "a", 0, "jump", 200, 100, 100, 100),
+        new Skill("pike jump", "b", 0, "jump", 375, 100, 100, 100)
 ]
 
     arrayOfRoutineSkills = [
@@ -35,8 +36,8 @@ function setup() {
          new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
          new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
     ]
-    
-    
+
+
 
 }
 
