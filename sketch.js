@@ -35,13 +35,13 @@ function setup() {
          new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
     ]
 
-    state = "static"; 
+    state = "static";
 
 }
 
 
 function mouseClicked() {
-    
+
 
     //need to add something to handle if nothing is clicked first
 
@@ -53,25 +53,23 @@ function mouseClicked() {
 
 
 
-   
-        if (state === "static") { //checks state (errored when included in if statement above)
 
-            for (let i = 0; i < libraryOfSkills.length; i++) {
-                if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
-                    lastClick = libraryOfSkills[i];
-                    console.log(state);
-                    state = "focus";
-                    console.log(state);
+    if (state === "static") { //checks state (errored when included in if statement above)
 
-                    //draws highlight around routine
-                    for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
-                        arrayOfRoutineSkills[j].drawHighlight();
-                        libraryOfSkills[i].drawHighlight();
+        for (let i = 0; i < libraryOfSkills.length; i++) {
+            if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
+                lastClick = libraryOfSkills[i];
+                state = "focus";
+                libraryOfSkills[i].drawHighlight();
 
-                    }
+                //draws highlight around routine
+                for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
+                    arrayOfRoutineSkills[j].drawHighlight();
+
                 }
             }
-       
+        }
+
         console.log(state);
         if (state === "focus") {
             console.log(state);
@@ -119,6 +117,6 @@ function mouseClicked() {
         }
     }
 
-    
+
 
 }
