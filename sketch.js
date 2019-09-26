@@ -6,6 +6,12 @@ let lastClick;
 let routineX;
 let routineY;
 
+let x = 25;
+let y = 100;
+let incredment = 50;
+let height = 100;
+let width = 100;
+
 function setup() {
     createCanvas(800, 800);
     canvasColor = color(122, 244, 222);
@@ -18,11 +24,18 @@ function setup() {
     //prepopulate library of skills skills[]
     //draw library of skills
 
+    let x = 25;
+    let y = 100;
+    let incredment = 50;
+    let height = 100;
+    let width = 100;
+
     libraryOfSkills = [
-    new Skill("split leap forward", "a", 0, "leap", 25, 100, 100, 100),
-   new Skill("tuck jump", "a", 0, "jump", 200, 100, 100, 100),
-        new Skill("pike jump", "b", 0, "jump", 375, 100, 100, 100)
+        new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
+        new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
+        new Skill("pike jump", "b", 0, "jump", (x + 2*width + 2*incredment), y, height, width)
 ]
+    console.log(libraryOfSkills);
 
     arrayOfRoutineSkills = [
      new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
@@ -70,6 +83,7 @@ function mouseClicked() {
                 }
             }
         }
+
     }
 
 
@@ -77,38 +91,37 @@ function mouseClicked() {
     //checks if mouse if in routine of skills
     //check which space the mouse is within
     //sets space to variable LastClick
+    else if (state === "focus") {
 
-else if (state === "focus") {
+        //erases and redraws skill in library to remove highlight
+        lastClick.eraseSkill();
+        lastClick.drawSkill();
 
-            //erases and redraws skill in library to remove highlight
-            lastClick.eraseSkill();
-            lastClick.drawSkill();
+        //removes highlight by erasing all skills and redrawing them
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            arrayOfRoutineSkills[i].eraseSkill();
+            arrayOfRoutineSkills[i].drawSkill();
+        }
 
-            //removes highlight by erasing all skills and redrawing them
-            for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-                arrayOfRoutineSkills[i].eraseSkill();
+
+        //checks through all elements in the routine
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+
+                //Changed variables rather than full replace because of errors
+                //change routine skill to be equal to previous click
+                arrayOfRoutineSkills[i].name = lastClick.name;
+                arrayOfRoutineSkills[i].letter = lastClick.letter;
+                arrayOfRoutineSkills[i].salto = lastClick.salto;
+                arrayOfRoutineSkills[i].type = lastClick.type;
+                console.log(arrayOfRoutineSkills)
                 arrayOfRoutineSkills[i].drawSkill();
-            }
-
-
-            //checks through all elements in the routine
-            for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-                if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
-
-                    //Changed variables rather than full replace because of errors
-                    //change routine skill to be equal to previous click
-                    arrayOfRoutineSkills[i].name = lastClick.name;
-                    arrayOfRoutineSkills[i].letter = lastClick.letter;
-                    arrayOfRoutineSkills[i].salto = lastClick.salto;
-                    arrayOfRoutineSkills[i].type = lastClick.type;
-                    console.log(arrayOfRoutineSkills)
-                    arrayOfRoutineSkills[i].drawSkill();
-                    console.log(state);
-                    state = "static"
-                    console.log(state);
-                }
+                console.log(state);
+                state = "static"
+                console.log(state);
             }
         }
+    }
 
 
 
