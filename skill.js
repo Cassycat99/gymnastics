@@ -1,5 +1,5 @@
 class Skill {
-    constructor(name, letter, salto, type, x, y, height, width) {
+    constructor(name, letter, salto, type, x, y, height, width, highlightColor) {
 
         this.name = name; //Name of skill
         this.letter = letter; //A, B, C (D, E, F)
@@ -12,7 +12,8 @@ class Skill {
         this.height = height;
         this.width = width;
 
-
+        //this.highlightColor = highlightColor;
+        //planning to add highlight color to seperate selecting skill in library and skill in routine for swap
 
         //image
 
