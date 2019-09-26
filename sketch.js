@@ -9,7 +9,7 @@ function setup() {
     arrayOfRoutineSkills = [];
     libraryOfSkills = [];
 
-    let state;
+    let state = "static"; //static, in focus
     let lastClick;
     let routineX;
     let routineY;
@@ -48,24 +48,32 @@ function mouseClicked() {
 
     //ADDING SKILLS
     //on mouse click, if the mouse is in skill in the library
+    //and the state is static
     //the skill will be saved to variable lastClick
     //to then be clicked into its desired location
 
 
 
-    if (mouseY <= 300) {
+    if (mouseY <= 300) { //checks mouse location
+        if (state = "static") { //checks state (errored when included in if statement above)
+            console.log(state);
+            state = "focus";
+            console.log(state);
+            for (let i = 0; i < libraryOfSkills.length; i++) {
+                if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
+                    lastClick = libraryOfSkills[i];
 
-        for (let i = 0; i < libraryOfSkills.length; i++) {
-            if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
-                lastClick = libraryOfSkills[i];
-
-                //draws highlight around routine
-                for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
-                    arrayOfRoutineSkills[j].drawHighlight();
-                    libraryOfSkills[i].drawHighlight();
-
+                    //draws highlight around routine
+                    for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
+                        arrayOfRoutineSkills[j].drawHighlight();
+                        libraryOfSkills[i].drawHighlight();
+                    }
                 }
             }
+        }
+        
+        else{
+            console.log("fired");
         }
     }
 
@@ -76,34 +84,37 @@ function mouseClicked() {
     //sets space to variable LastClick
 
     if (mouseY >= 300) { //check if routine is being clicked to prevent library edits
+        if (state = "focus") {
+            console.log(state);
+            state = "static"
+            console.log(state);
+            //erases and redraws skill in library to remove highlight
+            lastClick.eraseSkill();
+            lastClick.drawSkill();
 
-        //erases and redraws skill in library to remove highlight
-        lastClick.eraseSkill();
-        lastClick.drawSkill();
-
-        //removes highlight by erasing all skills and redrawing them
-        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-            arrayOfRoutineSkills[i].eraseSkill();
-            arrayOfRoutineSkills[i].drawSkill();
-        }
-
-
-
-        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-            if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
-
-                //Changed variables rather than full replace because of errors
-                //change routine skill to be equal to previous click
-                arrayOfRoutineSkills[i].name = lastClick.name;
-                arrayOfRoutineSkills[i].letter = lastClick.letter;
-                arrayOfRoutineSkills[i].salto = lastClick.salto;
-                arrayOfRoutineSkills[i].type = lastClick.type;
-                console.log(arrayOfRoutineSkills)
+            //removes highlight by erasing all skills and redrawing them
+            for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+                arrayOfRoutineSkills[i].eraseSkill();
                 arrayOfRoutineSkills[i].drawSkill();
+            }
+
+
+            //checks through all elements in the routine
+            for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+                if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+
+                    //Changed variables rather than full replace because of errors
+                    //change routine skill to be equal to previous click
+                    arrayOfRoutineSkills[i].name = lastClick.name;
+                    arrayOfRoutineSkills[i].letter = lastClick.letter;
+                    arrayOfRoutineSkills[i].salto = lastClick.salto;
+                    arrayOfRoutineSkills[i].type = lastClick.type;
+                    console.log(arrayOfRoutineSkills)
+                    arrayOfRoutineSkills[i].drawSkill();
+                }
             }
         }
     }
-
 
 
 
