@@ -51,7 +51,6 @@ function setup() {
 function mouseClicked() {
     console.log(state);
 
-    //need to add something to handle if skill in library is clicked followed by another skill in the library
     //need to add swap
 
     //ADDING SKILLS
