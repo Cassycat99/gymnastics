@@ -82,7 +82,7 @@ function mouseClicked() {
 
 
 
-    //checks if mouse if in routine of skills
+    //checks if state is focus
     //check which space the mouse is within
     //sets space to variable LastClick
     else if (state === "focus") {
@@ -96,6 +96,7 @@ function mouseClicked() {
             arrayOfRoutineSkills[i].eraseSkill();
             arrayOfRoutineSkills[i].drawSkill();
         }
+        //state is now visually set back to static
 
 
         //checks through all elements in the routine
