@@ -35,13 +35,13 @@ function setup() {
          new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
     ]
 
-    state = "static"; //state is not defined at 46 but defined here??
+    state = "static"; 
 
 }
 
 
 function mouseClicked() {
-    //console.log(state);
+    console.log(state);
 
     //need to add something to handle if nothing is clicked first
 
