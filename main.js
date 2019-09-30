@@ -5,6 +5,7 @@ let state; //static, in focus
 let lastClick;
 let routineX;
 let routineY;
+let swap;
 
 let x = 25;
 let y = 100;
@@ -75,6 +76,7 @@ function mouseClicked() {
 
 
         //IF Static and clicked inside of a skill in the library
+        //it will be highlighted
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
@@ -91,15 +93,16 @@ function mouseClicked() {
         }
 
 
-        //Add if static and click is inside skill in routine for swap here
+        //SWAP SET UP
 
-         //WIP, checks mouse location, does white highlight on skill selected and other skills, changes state
-        //need to add color change for highlight
-        //need to add variable for swap
+         //WIP, checks mouse location, does orange highlight on focus
+        //plan is to create an additional state depending on what was clicked 1st
+        //to determine if a swap should happen or just regular replacement
         
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
                 lastClick = arrayOfRoutineSkills[i];
+                swap = arrayOfRoutineSkills[i];
                 state = "focus";
                 arrayOfRoutineSkills[i].highlightColor = color(255, 150, 20);
                 arrayOfRoutineSkills[i].drawHighlight();
@@ -116,10 +119,14 @@ function mouseClicked() {
     }
 
 
+    //IF Focus and clicked inside of a skill in the routine
+    //it will be updated to the previous click
 
     //checks if state is focus
     //check which space the mouse is within
     //sets space to variable LastClick
+
+    
     else if (state === "focus") {
         state = "static"
         //erases and redraws skill in library to remove highlight
