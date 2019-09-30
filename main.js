@@ -1,4 +1,4 @@
-//defining global varaibles 
+//DEFINING GLOBAL VARIABLES
 let arrayOfRoutineSkills = [];
 let libraryOfSkills = [];
 let state; //static, in focus
@@ -12,6 +12,8 @@ let incredment = 50;
 let height = 100;
 let width = 100;
 
+
+//SETUP FOR CANVAS
 function setup() {
     let canvas = createCanvas(800, 800);
     canvasColor = color(122, 244, 222);
@@ -22,12 +24,12 @@ function setup() {
     canvas.parent('large-container');
 
 
-    let canvas2 = createCanvas(800, 800);
-    canvasColor = color(222, 244, 222);
-    noStroke();
-    background(color(122, 244, 222));
+    //let canvas2 = createCanvas(800, 800);
+    //canvasColor = color(222, 244, 222);
+    //noStroke();
+    //background(color(122, 244, 222));
     
-    canvas2.parent('large-container');
+    //canvas2.parent('large-container');
 
     libraryOfSkills = [
                 new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
@@ -51,6 +53,10 @@ function setup() {
 
 }
 
+
+
+
+//MOUSE CLICKED
 function mouseClicked() {
     console.log(state);
 
