@@ -22,6 +22,13 @@ function setup() {
     canvas.parent('large-container');
 
 
+    let canvas2 = createCanvas(800, 800);
+    canvasColor = color(222, 244, 222);
+    noStroke();
+    background(color(122, 244, 222));
+    
+    canvas2.parent('large-container');
+
     libraryOfSkills = [
                 new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
                 new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),

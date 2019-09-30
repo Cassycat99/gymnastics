@@ -37,10 +37,13 @@ class Skill {
 
 
     eraseSkill() {
+        canvasColor = color(122, 244, 222);
         fill(canvasColor);
         rect(this.x - 5, this.y - 5, this.width + 10, this.height + 10);
 
         //take away from total point value w/ logic
+        
+        console.log("erase called");
 
     }
 
