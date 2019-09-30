@@ -14,14 +14,69 @@
     <!--p5 library (only works when online, if so uncomment the following line)-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>-->
 
+    <style>
+        body {
+            background-color: rebeccapurple;
+            height: 100%;
+            overflow: auto;
+        }
 
+
+
+        #scroll-container {
+            width: calc(500px);
+            height: calc(100vh - 152px);
+            overflow: auto;
+            margin: 10px;
+            border: 1px solid grey;
+            background-color: white;
+        }
+    </style>
+    
 </head>
 
 <body>
 
+    <div id="scroll-container">
+        <div id="large-container">
+            <div id="container"></div>
+        </div>
+    </div>
 
 
+    <script>
+        function setup() {
+            let canvas = createCanvas(800, 800);
+            canvasColor = color(122, 244, 222);
+            noStroke();
+            background(color(122, 244, 222));
 
+            fill(255);
+            canvas.parent('large-container');
+
+
+            libraryOfSkills = [
+                new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
+                new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
+                new Skill("pike jump", "b", 0, "jump", (x + 2 * width + 2 * incredment), y, height, width)
+            ]
+
+
+            arrayOfRoutineSkills = [
+                new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
+            ]
+
+            state = "static";
+
+        }
+    </script>
 </body>
 
 </html>

@@ -12,37 +12,6 @@ let incredment = 50;
 let height = 100;
 let width = 100;
 
-function setup() {
-    createCanvas(800, 800);
-    canvasColor = color(122, 244, 222);
-    noStroke();
-    background(color(122, 244, 222));
-
-    fill(255);
-
-
-
-    libraryOfSkills = [
-        new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
-        new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
-        new Skill("pike jump", "b", 0, "jump", (x + 2*width + 2*incredment), y, height, width)
-]
-    
-
-    arrayOfRoutineSkills = [
-     new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
-        new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
-         new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
-    ]
-
-    state = "static";
-
-}
 
 
 function mouseClicked() {
