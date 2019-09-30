@@ -12,7 +12,37 @@ let incredment = 50;
 let height = 100;
 let width = 100;
 
+function setup() {
+    let canvas = createCanvas(800, 800);
+    canvasColor = color(122, 244, 222);
+    noStroke();
+    background(color(122, 244, 222));
 
+    fill(255);
+    canvas.parent('large-container');
+
+
+    libraryOfSkills = [
+                new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
+                new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
+                new Skill("pike jump", "b", 0, "jump", (x + 2 * width + 2 * incredment), y, height, width)
+            ]
+
+
+    arrayOfRoutineSkills = [
+                new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
+            ]
+
+    state = "static";
+
+}
 
 function mouseClicked() {
     console.log(state);
@@ -30,7 +60,7 @@ function mouseClicked() {
 
     if (state === "static") { //checks state when mouse is clicked
 
-        
+
         //IF Static and clicked inside of a skill in the library
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
@@ -45,10 +75,10 @@ function mouseClicked() {
                 }
             }
         }
-        
-        
+
+
         //Add if static and click is inside skill in routine for swap here
-        
+
         /* //WIP, checks mouse location, does white highlight on skill selected and other skills, changes state
         //need to add color change for highlight
         //need to add variable for swap
@@ -99,12 +129,12 @@ function mouseClicked() {
                 arrayOfRoutineSkills[i].type = lastClick.type;
                 console.log(arrayOfRoutineSkills)
                 arrayOfRoutineSkills[i].drawSkill();
-                
+
             }
         }
     }
 
-console.log(state);
+    console.log(state);
 
 
 }

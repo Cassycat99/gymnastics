@@ -7,7 +7,7 @@ body {
 
 
 #scroll-container {
-    width: calc(500px);
+    width: calc(600px);
     height: calc(100vh - 152px);
     overflow: auto;
     margin: 10px;
