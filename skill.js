@@ -12,7 +12,7 @@ class Skill {
         this.height = height;
         this.width = width;
 
-        //this.highlightColor = highlightColor;
+        this.highlightColor = color(255, 255, 255);
         //planning to add highlight color to seperate selecting skill in library and skill in routine for swap
 
         //image
@@ -48,7 +48,7 @@ class Skill {
     }
 
     drawHighlight() {
-        fill(300);
+        fill(this.highlightColor);
         rect(this.x - 5, this.y - 5, this.width + 10, this.height + 10);
         this.drawSkill();
     }
