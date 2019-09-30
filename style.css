@@ -1,0 +1,16 @@
+body {
+    background-color: rebeccapurple;
+    height: 100%;
+    overflow: auto;
+}
+
+
+
+#scroll-container {
+    width: calc(500px);
+    height: calc(100vh - 152px);
+    overflow: auto;
+    margin: 10px;
+    border: 1px solid grey;
+    background-color: white;
+}
