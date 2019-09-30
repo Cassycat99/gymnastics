@@ -41,10 +41,10 @@ function setup() {
                 new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 25, 575, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 150, 575, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 275, 575, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 400, 575, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 25, 525, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 525, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 275, 525, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 400, 525, 100, 100),
             ]
 
     state = "static";
