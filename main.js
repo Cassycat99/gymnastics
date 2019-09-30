@@ -6,6 +6,7 @@ let lastClick;
 let routineX;
 let routineY;
 let swap;
+let swapLocation;
 
 let x = 25;
 let y = 100;
@@ -29,7 +30,7 @@ function setup() {
     //canvasColor = color(222, 244, 222);
     //noStroke();
     //background(color(122, 244, 222));
-    
+
     //canvas2.parent('large-container');
 
     libraryOfSkills = [
@@ -59,7 +60,7 @@ function setup() {
 
 //MOUSE CLICKED
 function mouseClicked() {
-    console.log(state);
+
 
     //need to add swap
 
@@ -80,7 +81,7 @@ function mouseClicked() {
         for (let i = 0; i < libraryOfSkills.length; i++) {
             if (mouseX >= libraryOfSkills[i].x && mouseX <= (libraryOfSkills[i].x + libraryOfSkills[i].width) && mouseY >= libraryOfSkills[i].y && mouseY <= (libraryOfSkills[i].y + libraryOfSkills[i].height)) {
                 lastClick = libraryOfSkills[i];
-                state = "focus";
+                state = "focusLibrary";
                 libraryOfSkills[i].highlightColor = color(255, 255, 100);
                 libraryOfSkills[i].drawHighlight();
 
@@ -95,25 +96,26 @@ function mouseClicked() {
 
         //SWAP SET UP
 
-         //WIP, checks mouse location, does orange highlight on focus
+        //WIP, checks mouse location, does orange highlight on focus
         //plan is to create an additional state depending on what was clicked 1st
         //to determine if a swap should happen or just regular replacement
-        
+
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
                 lastClick = arrayOfRoutineSkills[i];
-                swap = arrayOfRoutineSkills[i];
-                state = "focus";
+                swapLocation = i;
+                state = "focusRoutine";
                 arrayOfRoutineSkills[i].highlightColor = color(255, 150, 20);
                 arrayOfRoutineSkills[i].drawHighlight();
-                
-                
+
+
+
                 for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
                     arrayOfRoutineSkills[j].drawHighlight();
                     arrayOfRoutineSkills[j].highlightColor = color(255, 255, 255);
                 }
             }
-            
+
         }
 
     }
@@ -125,9 +127,7 @@ function mouseClicked() {
     //checks if state is focus
     //check which space the mouse is within
     //sets space to variable LastClick
-
-    
-    else if (state === "focus") {
+    else if (state === "focusLibrary") {
         state = "static"
         //erases and redraws skill in library to remove highlight
         lastClick.eraseSkill();
@@ -151,14 +151,83 @@ function mouseClicked() {
                 arrayOfRoutineSkills[i].letter = lastClick.letter;
                 arrayOfRoutineSkills[i].salto = lastClick.salto;
                 arrayOfRoutineSkills[i].type = lastClick.type;
-                console.log(arrayOfRoutineSkills)
+
                 arrayOfRoutineSkills[i].drawSkill();
+
+            }
+        }
+    } else if (state === "focusRoutine") {
+
+        state = "static"
+        //erases and redraws skill in library to remove highlight
+        lastClick.eraseSkill();
+        lastClick.drawSkill();
+
+        //removes highlight by erasing all skills and redrawing them
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            arrayOfRoutineSkills[i].eraseSkill();
+            arrayOfRoutineSkills[i].drawSkill();
+        }
+        //state is now visually set back to static
+
+
+
+        //checks through all elements in the routine
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
+
+                swap = arrayOfRoutineSkills[i];
+                swap.name = arrayOfRoutineSkills[i].name;
+
+
+                console.log(lastClick.name); //focus click
+                console.log(swap.name); //new click
+
+                console.log(i);
+                console.log(swapLocation);
+                
+                arrayOfRoutineSkills[i].name = lastClick.name;
+                arrayOfRoutineSkills[swapLocation].name = swap.name;
+                
+                console.log(lastClick.name); //focus click
+                console.log(swap.name); //new click
+
+                console.log(i);
+                console.log(swapLocation);
+
+                /*
+                //Changed variables rather than full replace because of errors
+                //change routine skill to be equal to previous click
+                arrayOfRoutineSkills[i].name = lastClick.name;
+                arrayOfRoutineSkills[i].letter = lastClick.letter;
+                arrayOfRoutineSkills[i].salto = lastClick.salto;
+                arrayOfRoutineSkills[i].type = lastClick.type;
+                                
+                console.log(i);
+                console.log(swapLocation);
+                console.log(lastClick.name);
+                console.log(swap.name);
+
+                //arrayOfRoutineSkills[swapLocation].letter = arrayOfRoutineSkills[i].letter;
+                //arrayOfRoutineSkills[swapLocation].salto = arrayOfRoutineSkills[i].salto;
+               // arrayOfRoutineSkills[swapLocation].type = arrayOfRoutineSkills[i].type;
+                
+                console.log(i);
+                console.log(swapLocation);
+                console.log(lastClick.name);
+                console.log(swap.name);*/
+
+                arrayOfRoutineSkills[swapLocation].drawSkill();
+                arrayOfRoutineSkills[i].drawSkill();
+
+
+
 
             }
         }
     }
 
-    console.log(state);
+
 
 
 }
