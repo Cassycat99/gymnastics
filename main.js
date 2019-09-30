@@ -5,7 +5,7 @@ let state; //static, in focus
 let lastClick;
 let routineX;
 let routineY;
-let swap;
+
 let swapLocation;
 
 let x = 25;
@@ -42,7 +42,7 @@ function setup() {
 
     arrayOfRoutineSkills = [
                 new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
+                new Skill("missing skill2", "0", 0, "empty", 150, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 25, 525, 100, 100),
@@ -175,25 +175,30 @@ function mouseClicked() {
         //checks through all elements in the routine
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
-
+                
+                let swap;
                 swap = arrayOfRoutineSkills[i];
-                swap.name = arrayOfRoutineSkills[i].name;
+                //swap.name = arrayOfRoutineSkills[i].name;
 
 
                 console.log(lastClick.name); //focus click
                 console.log(swap.name); //new click
 
-                console.log(i);
                 console.log(swapLocation);
-                
-                arrayOfRoutineSkills[i].name = lastClick.name;
-                arrayOfRoutineSkills[swapLocation].name = swap.name;
+                console.log(i);
+                                
+                arrayOfRoutineSkills[swapLocation].name = lastClick.name;
                 
                 console.log(lastClick.name); //focus click
                 console.log(swap.name); //new click
+                
+                arrayOfRoutineSkills[i].name = swap.name;
+                                
+                console.log(lastClick.name); //focus click
+                console.log(swap.name); //new click
 
-                console.log(i);
                 console.log(swapLocation);
+                console.log(i);
 
                 /*
                 //Changed variables rather than full replace because of errors
