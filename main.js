@@ -5,6 +5,7 @@ let state; //static, in focus
 let lastClick;
 let routineX;
 let routineY;
+let startValue;
 
 let swapLocation;
 
@@ -52,10 +53,53 @@ function setup() {
             ]
 
     state = "static";
+    startValue = 0;
 
 }
 
+function startValue(){
+    
+    startValue = 10;
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    
+    //checks # of As, Bs, and Cs
+    for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+        //adds As
+        if (arrayOfRoutineSkills[i].letter === "a"){
+            a = a + 1;
+        }
+        //adds Bs
+        if (arrayOfRoutineSkills[i].letter === "b"){
+            b = b + 1;
+        }
+        //adds Cs
+        if (arrayOfRoutineSkills[i].letter === "c"){
+            c = c + 1;
+        }    
+    }
+    
+    if (a >= 4){
+        startValue = startValue - (.1(4 - a))
+    }
+    
+    //1 B can equal a C in your routine
+    if (c === 1){
+        b = b + 1;
+    }
+    
+    if (c >=2){
+        b = b + 1;
+        startValue = startValue - (.2 * c)
+    }
+    
+    if (b >= 4){
+        startValue = startValue - (.2(4 - b))
+    }
+    
 
+}
 
 
 //MOUSE CLICKED
