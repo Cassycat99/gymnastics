@@ -42,7 +42,7 @@ function setup() {
 
     arrayOfRoutineSkills = [
                 new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
-                new Skill("missing skill2", "0", 0, "empty", 150, 400, 100, 100),
+                new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
                 new Skill("missing skill", "0", 0, "empty", 25, 525, 100, 100),
@@ -176,56 +176,30 @@ function mouseClicked() {
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
                 
-                let swap;
-                swap = arrayOfRoutineSkills[i];
-                //swap.name = arrayOfRoutineSkills[i].name;
+                //store vairables for swapping
+                let swapName = arrayOfRoutineSkills[i].name;
+                let swapLetter = arrayOfRoutineSkills[i].letter;
+                let swapSalto = arrayOfRoutineSkills[i].salto;
+                let swapType = arrayOfRoutineSkills[i].type;
 
-
-                console.log(lastClick.name); //focus click
-                console.log(swap.name); //new click
-
-                console.log(swapLocation);
-                console.log(i);
+                // swapLocation = focus click
+                // i = new click
                                 
-                arrayOfRoutineSkills[swapLocation].name = lastClick.name;
+                //take focus click and make name equal to new click
+                arrayOfRoutineSkills[i].name = arrayOfRoutineSkills[swapLocation].name;
+                arrayOfRoutineSkills[i].letter = arrayOfRoutineSkills[swapLocation].letter;
+                arrayOfRoutineSkills[i].salto = arrayOfRoutineSkills[swapLocation].salto;
+                arrayOfRoutineSkills[i].type = arrayOfRoutineSkills[swapLocation].type;
                 
-                console.log(lastClick.name); //focus click
-                console.log(swap.name); //new click
-                
-                arrayOfRoutineSkills[i].name = swap.name;
-                                
-                console.log(lastClick.name); //focus click
-                console.log(swap.name); //new click
+                //take new click and make equal to stored variables
+                arrayOfRoutineSkills[swapLocation].name = swapName;
+                arrayOfRoutineSkills[swapLocation].letter = swapLetter;
+                arrayOfRoutineSkills[swapLocation].salto = swapSalto;
+                arrayOfRoutineSkills[swapLocation].type = swapType;
 
-                console.log(swapLocation);
-                console.log(i);
-
-                /*
-                //Changed variables rather than full replace because of errors
-                //change routine skill to be equal to previous click
-                arrayOfRoutineSkills[i].name = lastClick.name;
-                arrayOfRoutineSkills[i].letter = lastClick.letter;
-                arrayOfRoutineSkills[i].salto = lastClick.salto;
-                arrayOfRoutineSkills[i].type = lastClick.type;
-                                
-                console.log(i);
-                console.log(swapLocation);
-                console.log(lastClick.name);
-                console.log(swap.name);
-
-                //arrayOfRoutineSkills[swapLocation].letter = arrayOfRoutineSkills[i].letter;
-                //arrayOfRoutineSkills[swapLocation].salto = arrayOfRoutineSkills[i].salto;
-               // arrayOfRoutineSkills[swapLocation].type = arrayOfRoutineSkills[i].type;
-                
-                console.log(i);
-                console.log(swapLocation);
-                console.log(lastClick.name);
-                console.log(swap.name);*/
 
                 arrayOfRoutineSkills[swapLocation].drawSkill();
                 arrayOfRoutineSkills[i].drawSkill();
-
-
 
 
             }
