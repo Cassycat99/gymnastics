@@ -106,9 +106,16 @@ function setStartValue() {
 }
 
 function drawStartValue() {
+
+    //erase previous number
+    canvasColor = color(122, 244, 222);
+    fill(canvasColor);
+    rect(25, 0, 100, 100);
+
+    //draw new number    
     fill(color(42, 104, 112));
     textSize(50);
-    text("Start Value = " & startValue, 50, 50);
+    text(startValue, 50, 50);
 }
 
 
@@ -262,6 +269,7 @@ function mouseClicked() {
     if (state === "static") { //checks state when mouse is clicked
 
         setStartValue(); //sets and draws start value of routine
+        console.log(startValue);
     }
 
 
