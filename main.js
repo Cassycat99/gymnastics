@@ -54,59 +54,66 @@ function setup() {
 
     state = "static";
     startValue = 0;
+    drawStartValue();
 
 }
 
-function setStartValue(){
-    
+function setStartValue() {
+
     startValue = 10;
     let a = 0;
     let b = 0;
     let c = 0;
-    
+
     //checks # of As, Bs, and Cs
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
         //adds As
-        if (arrayOfRoutineSkills[i].letter === "a"){
+        if (arrayOfRoutineSkills[i].letter === "a") {
             a = a + 1;
         }
         //adds Bs
-        if (arrayOfRoutineSkills[i].letter === "b"){
+        if (arrayOfRoutineSkills[i].letter === "b") {
             b = b + 1;
         }
         //adds Cs
-        if (arrayOfRoutineSkills[i].letter === "c"){
+        if (arrayOfRoutineSkills[i].letter === "c") {
             c = c + 1;
-        }    
+        }
     }
-    
-    if (a >= 4){
+
+    if (a >= 4) {
         startValue = startValue - (.1(4 - a))
     }
-    
+
     //1 B can equal a C in your routine
-    if (c === 1){
+    if (c === 1) {
         b = b + 1;
     }
-    
-    if (c >=2){
+
+    if (c >= 2) {
         b = b + 1;
         startValue = startValue - (.2 * c)
     }
-    
-    if (b >= 4){
+
+    if (b >= 4) {
         startValue = startValue - (.2(4 - b))
     }
-    
 
+    drawStartValue();
+
+    console.log(a);
+    console.log(b);
+}
+
+function drawStartValue() {
+    fill(color(42, 104, 112));
+    textSize(50);
+    text("Start Value = " & startValue, 50, 50);
 }
 
 
 //MOUSE CLICKED
 function mouseClicked() {
-
-
-    //need to add swap
 
     //ADDING SKILLS
     //on mouse click, if the mouse is in skill in the library
@@ -138,9 +145,9 @@ function mouseClicked() {
         }
 
 
-        //SWAP SET UP
+        //SWAP
 
-        //WIP, checks mouse location, does orange highlight on focus
+        //checks mouse location, does orange highlight on focus
         //plan is to create an additional state depending on what was clicked 1st
         //to determine if a swap should happen or just regular replacement
 
@@ -219,7 +226,7 @@ function mouseClicked() {
         //checks through all elements in the routine
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
             if (mouseX >= arrayOfRoutineSkills[i].x && mouseX <= (arrayOfRoutineSkills[i].x + arrayOfRoutineSkills[i].width) && mouseY >= arrayOfRoutineSkills[i].y && mouseY <= (arrayOfRoutineSkills[i].y + arrayOfRoutineSkills[i].height)) {
-                
+
                 //store vairables for swapping
                 let swapName = arrayOfRoutineSkills[i].name;
                 let swapLetter = arrayOfRoutineSkills[i].letter;
@@ -228,13 +235,13 @@ function mouseClicked() {
 
                 // swapLocation = focus click
                 // i = new click
-                                
+
                 //take focus click and make name equal to new click
                 arrayOfRoutineSkills[i].name = arrayOfRoutineSkills[swapLocation].name;
                 arrayOfRoutineSkills[i].letter = arrayOfRoutineSkills[swapLocation].letter;
                 arrayOfRoutineSkills[i].salto = arrayOfRoutineSkills[swapLocation].salto;
                 arrayOfRoutineSkills[i].type = arrayOfRoutineSkills[swapLocation].type;
-                
+
                 //take new click and make equal to stored variables
                 arrayOfRoutineSkills[swapLocation].name = swapName;
                 arrayOfRoutineSkills[swapLocation].letter = swapLetter;
@@ -251,6 +258,11 @@ function mouseClicked() {
     }
 
 
+    //sets start value after all changes have been made and the state is in static
+    if (state === "static") { //checks state when mouse is clicked
+
+        setStartValue(); //sets and draws start value of routine
+    }
 
 
 }

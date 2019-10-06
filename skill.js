@@ -13,7 +13,7 @@ class Skill {
         this.width = width;
 
         this.highlightColor = color(255, 255, 255);
-        //planning to add highlight color to seperate selecting skill in library and skill in routine for swap
+        
 
         //image
 
