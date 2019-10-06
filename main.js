@@ -57,7 +57,7 @@ function setup() {
 
 }
 
-function startValue(){
+function setStartValue(){
     
     startValue = 10;
     let a = 0;
