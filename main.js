@@ -35,24 +35,25 @@ function setup() {
     //canvas2.parent('large-container');
 
     libraryOfSkills = [
-                new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
-                new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
-                new Skill("pike jump", "b", 0, "jump", (x + 2 * width + 2 * incredment), y, height, width),
-                new Skill("360 turn", "a", 0, "turn", (x + 3 * width + 3 * incredment), y, height, width),
-                new Skill("540 turn", "b", 0, "turn", (x + 4 * width + 4 * incredment), y, height, width)
+                new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width),
+                new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
+                new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
+                new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
+                new Skill("540 turn", "b", "nonsalto", "turn", (x + 4 * width + 4 * incredment), y, height, width)
             ]
 
 
     arrayOfRoutineSkills = [
-                new Skill("missing skill", "0", 0, "empty", 25, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 150, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 275, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 400, 400, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 25, 525, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 150, 525, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 275, 525, 100, 100),
-                new Skill("missing skill", "0", 0, "empty", 400, 525, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 25, 400, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 150, 400, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 275, 400, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 400, 400, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 25, 525, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 150, 525, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 275, 525, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 400, 525, 100, 100),
             ]
+
 
     state = "static";
     startValue = 0.0;
@@ -63,7 +64,7 @@ function setup() {
 }
 
 function setStartValue() {
-
+    
     //ADD SPOT TO
     //CHECK IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
 
@@ -74,6 +75,7 @@ function setStartValue() {
 
     let turnRequirement = "missing";
     let saltoRequirement = "missing";
+    let dismountRequirement = "missing";
 
     //checks # of As, Bs, and Cs. turnRequirement and salto
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -89,12 +91,26 @@ function setStartValue() {
         if (arrayOfRoutineSkills[i].letter === "c") {
             c = c + 1;
         }
+        //checks turn to be a B or C
         if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "b") {
             turnRequirement = "met";
         } else if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "c") {
             turnRequirement = "met";
         }
     }
+    
+    
+    //checks dismount salto/last salto in routine
+    console.log(arrayOfRoutineSkills[0].salto)
+        if (arrayOfRoutineSkills[arrayOfRoutineSkills.length].salto === "salto" && arrayOfRoutineSkills[i].letter === "b") {
+            dismountRequirement = "met";
+        }
+        else if (arrayOfRoutineSkills[arrayOfRoutineSkills.length].salto === 1 && arrayOfRoutineSkills[i].letter === "c") {
+            dismountRequirement = "met";
+        }
+    
+    
+    //CALCULATES START VALUE
 
     if (a <= 4) {
 
@@ -108,11 +124,11 @@ function setStartValue() {
 
     if (c <= 2) {
         b = b + 1;
-        startValue = (startValue - (0.2 * c))
+        startValue = (startValue - (0.2 * c));
     }
 
     if (b <= 4) {
-        startValue = (startValue - (0.2 * (4.0 - b)))
+        startValue = (startValue - (0.2 * (4.0 - b)));
     }
 
     if (turnRequirement = "missing") {
