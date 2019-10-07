@@ -69,7 +69,6 @@ function setStartValue() {
 
     let missingSkills = 0;
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
-        console.log(missingSkills);
         if (arrayOfRoutineSkills[i].type === "empty"){
             missingSkills = missingSkills + 1;
         }
@@ -215,8 +214,6 @@ function mouseClicked() {
                 state = "focusRoutine";
                 arrayOfRoutineSkills[i].highlightColor = color(255, 150, 20);
                 arrayOfRoutineSkills[i].drawHighlight();
-
-
 
                 for (let j = 0; j < arrayOfRoutineSkills.length; j++) {
                     arrayOfRoutineSkills[j].drawHighlight();
