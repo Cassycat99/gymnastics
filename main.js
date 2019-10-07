@@ -55,15 +55,18 @@ function setup() {
     state = "static";
     startValue = 0;
     drawStartValue();
+    console.log(startValue);
 
 }
 
 function setStartValue() {
 
+    console.log(startValue);
     startValue = 10;
     let a = 0;
     let b = 0;
     let c = 0;
+    console.log(startValue);
 
     //checks # of As, Bs, and Cs
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -82,7 +85,10 @@ function setStartValue() {
     }
 
     if (a <= 4) {
-        startValue = startValue - (0.1(4 - a))
+        console.log(startValue);
+        startValue = (startValue - 1)
+        console.log(StartValue);
+        //startValue = startValue - (0.1(4 - a))
     }
 
     //1 B can equal a C in your routine
@@ -92,11 +98,11 @@ function setStartValue() {
 
     if (c <= 2) {
         b = b + 1;
-        startValue = startValue - (0.2 * c)
+        startValue = (startValue - (0.2 * c))
     }
 
     if (b <= 4) {
-        startValue = startValue - (0.2(4 - b))
+        startValue = (startValue - (0.2(4 - b)))
     }
 
     drawStartValue();
