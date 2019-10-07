@@ -86,7 +86,7 @@ function setStartValue() {
 
     if (a <= 4) {
         console.log(startValue);
-        startValue = (startValue - 1)
+        startValue = (startValue - 1);
         console.log(StartValue);
         //startValue = startValue - (0.1(4 - a))
     }
