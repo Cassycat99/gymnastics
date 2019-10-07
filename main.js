@@ -62,6 +62,9 @@ function setup() {
 
 function setStartValue() {
 
+    //ADD SPOT TO
+    //CHECK IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
+    
     console.log(startValue);
     startValue = 10.0;
     let a = 0;
@@ -101,7 +104,7 @@ function setStartValue() {
     }
 
     if (b <= 4) {
-        startValue = (startValue - (0.2 * (4 - b)))
+        startValue = (startValue - (0.2 * (4.0 - b)))
     }
 
     drawStartValue();
