@@ -142,15 +142,13 @@ function setStartValue() {
     }
 
     drawStartValue();
-console.log("fired");
 
-    console.log(startValue);
+
     }
     
     //if all skills are missing, nothing is calculated
     else{
         startValue = 0;
-        console.log("fired2");
     }
 }
 
@@ -316,7 +314,6 @@ function mouseClicked() {
     if (state === "static") { //checks state when mouse is clicked
 
         setStartValue(); //sets and draws start value of routine
-        console.log(startValue);
     }
 
 
