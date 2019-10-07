@@ -2,9 +2,16 @@ body {
     background-color: rebeccapurple;
     height: 100%;
     overflow: auto;
+    
 }
 
-
+#left-container {
+    width: calc(100px);
+    height: calc(100px);
+    color: aliceblue;
+    z-index: 1;
+    
+}
 
 #scroll-container {
     width: calc(600px);

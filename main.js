@@ -18,6 +18,14 @@ let width = 100;
 
 //SETUP FOR CANVAS
 function setup() {
+    
+    let canvas2 = createCanvas(1500, 1000);
+    canvasColor = color(22, 44, 22);
+    noStroke();
+    background(color(122, 244, 222));
+
+    canvas2.parent('left-container');
+    
     let canvas = createCanvas(800, 800);
     canvasColor = color(122, 244, 222);
     noStroke();
@@ -27,12 +35,6 @@ function setup() {
     canvas.parent('large-container');
 
 
-    //let canvas2 = createCanvas(800, 800);
-    //canvasColor = color(222, 244, 222);
-    //noStroke();
-    //background(color(122, 244, 222));
-
-    //canvas2.parent('large-container');
 
     libraryOfSkills = [
                 new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width),
@@ -57,17 +59,24 @@ function setup() {
 
     state = "static";
     startValue = 0.0;
-    console.log(typeof startValue);
     drawStartValue();
-    console.log(startValue);
 
 }
 
 function setStartValue() {
-    
-    //ADD SPOT TO
-    //CHECK IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
 
+    //CHECKS IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
+
+    let missingSkills = 0;
+    for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+        console.log(missingSkills);
+        if (arrayOfRoutineSkills[i].type === "empty"){
+            missingSkills = missingSkills + 1;
+        }
+    }
+    
+    if (missingSkills != (arrayOfRoutineSkills.length)){
+    
     startValue = 10.0;
     let a = 0;
     let b = 0;
@@ -98,18 +107,16 @@ function setStartValue() {
             turnRequirement = "met";
         }
     }
-    
-    
+
+
     //checks dismount salto/last salto in routine
-    console.log(arrayOfRoutineSkills[0].salto)
-        if (arrayOfRoutineSkills[arrayOfRoutineSkills.length].salto === "salto" && arrayOfRoutineSkills[i].letter === "b") {
-            dismountRequirement = "met";
-        }
-        else if (arrayOfRoutineSkills[arrayOfRoutineSkills.length].salto === 1 && arrayOfRoutineSkills[i].letter === "c") {
-            dismountRequirement = "met";
-        }
-    
-    
+    if (arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].salto === "salto" && arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].letter === "b") {
+        dismountRequirement = "met";
+    } else if (arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].salto === "salto" && arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].letter === "c") {
+        dismountRequirement = "met";
+    }
+
+
     //CALCULATES START VALUE
 
     if (a <= 4) {
@@ -136,10 +143,16 @@ function setStartValue() {
     }
 
     drawStartValue();
+console.log("fired");
 
-    console.log(a);
-    console.log(b);
     console.log(startValue);
+    }
+    
+    //if all skills are missing, nothing is calculated
+    else{
+        startValue = 0;
+        console.log("fired2");
+    }
 }
 
 function drawStartValue() {
