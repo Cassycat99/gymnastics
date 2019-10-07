@@ -53,7 +53,8 @@ function setup() {
             ]
 
     state = "static";
-    startValue = 0;
+    startValue = 0.0;
+    console.log(typeof startValue);
     drawStartValue();
     console.log(startValue);
 
@@ -62,7 +63,7 @@ function setup() {
 function setStartValue() {
 
     console.log(startValue);
-    startValue = 10;
+    startValue = 10.0;
     let a = 0;
     let b = 0;
     let c = 0;
@@ -85,12 +86,12 @@ function setStartValue() {
     }
 
     if (a <= 4) {
+        
         console.log(startValue);
         console.log(typeof startValue);
-        startValue = (startValue - 1);
+        startValue = startValue - (0.1(4 - a));
         console.log(startValue);
         console.log(typeof startValue);
-        //startValue = startValue - (0.1(4 - a))
     }
 
     //1 B can equal a C in your routine
