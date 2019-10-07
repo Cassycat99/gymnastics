@@ -64,15 +64,16 @@ function setStartValue() {
 
     //ADD SPOT TO
     //CHECK IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
-    
-    console.log(startValue);
+
     startValue = 10.0;
     let a = 0;
     let b = 0;
     let c = 0;
-    console.log(startValue);
 
-    //checks # of As, Bs, and Cs
+    let turnRequirement = "missing";
+    let saltoRequirement = "missing";
+
+    //checks # of As, Bs, and Cs. turnRequirement and salto
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
         //adds As
         if (arrayOfRoutineSkills[i].letter === "a") {
@@ -85,6 +86,11 @@ function setStartValue() {
         //adds Cs
         if (arrayOfRoutineSkills[i].letter === "c") {
             c = c + 1;
+        }
+        if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "b") {
+            turnRequirement = "met";
+        } else if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "c") {
+            turnRequirement = "met";
         }
     }
 
@@ -107,6 +113,10 @@ function setStartValue() {
         startValue = (startValue - (0.2 * (4.0 - b)))
     }
 
+    if (turnRequirement = "missing") {
+        startValue - 0.2;
+    }
+
     drawStartValue();
 
     console.log(a);
@@ -124,7 +134,7 @@ function drawStartValue() {
     //draw new number    
     fill(color(42, 104, 112));
     textSize(50);
-    text(startValue, 50, 50);
+    text(startValue.toFixed(1), 50, 50);
 }
 
 
