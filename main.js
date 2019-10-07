@@ -81,8 +81,8 @@ function setStartValue() {
         }
     }
 
-    if (a >= 4) {
-        startValue = startValue - (.1(4 - a))
+    if (a <= 4) {
+        startValue = startValue - (0.1(4 - a))
     }
 
     //1 B can equal a C in your routine
@@ -90,19 +90,20 @@ function setStartValue() {
         b = b + 1;
     }
 
-    if (c >= 2) {
+    if (c <= 2) {
         b = b + 1;
-        startValue = startValue - (.2 * c)
+        startValue = startValue - (0.2 * c)
     }
 
-    if (b >= 4) {
-        startValue = startValue - (.2(4 - b))
+    if (b <= 4) {
+        startValue = startValue - (0.2(4 - b))
     }
 
     drawStartValue();
 
     console.log(a);
     console.log(b);
+    console.log(startValue);
 }
 
 function drawStartValue() {
