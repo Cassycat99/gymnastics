@@ -37,7 +37,9 @@ function setup() {
     libraryOfSkills = [
                 new Skill("split leap forward", "a", 0, "leap", x, y, height, width),
                 new Skill("tuck jump", "a", 0, "jump", (x + width + incredment), y, height, width),
-                new Skill("pike jump", "b", 0, "jump", (x + 2 * width + 2 * incredment), y, height, width)
+                new Skill("pike jump", "b", 0, "jump", (x + 2 * width + 2 * incredment), y, height, width),
+                new Skill("360 turn", "a", 0, "turn", (x + 3 * width + 3 * incredment), y, height, width),
+                new Skill("540 turn", "b", 0, "turn", (x + 4 * width + 4 * incredment), y, height, width)
             ]
 
 
