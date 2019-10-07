@@ -77,6 +77,7 @@ function setStartValue() {
     if (missingSkills != (arrayOfRoutineSkills.length)){
     
     startValue = 10.0;
+        
     let a = 0;
     let b = 0;
     let c = 0;
@@ -84,6 +85,7 @@ function setStartValue() {
     let turnRequirement = "missing";
     let saltoRequirement = "missing";
     let dismountRequirement = "missing";
+        console.log(turnRequirement);
 
     //checks # of As, Bs, and Cs. turnRequirement and salto
     for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -106,6 +108,11 @@ function setStartValue() {
             turnRequirement = "met";
         }
     }
+        
+                console.log(turnRequirement);
+        console.log(a);
+        console.log(b);
+        console.log(c);
 
 
     //checks dismount salto/last salto in routine
@@ -137,8 +144,9 @@ function setStartValue() {
         startValue = (startValue - (0.2 * (4.0 - b)));
     }
 
-    if (turnRequirement = "missing") {
-        startValue - 0.2;
+
+    if (turnRequirement === "missing") {
+        startValue = startValue - 0.2;
     }
 
     drawStartValue();
@@ -150,6 +158,8 @@ function setStartValue() {
     else{
         startValue = 0;
     }
+    
+    
 }
 
 function drawStartValue() {
