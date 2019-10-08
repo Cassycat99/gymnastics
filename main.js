@@ -562,6 +562,8 @@ function setStartValue() {
 
         console.log("Turn requirement is");
         console.log(turnRequirement);
+        console.log("Leap requirement is");
+        console.log(leapRequirement);
         console.log("Dismount requirement is");
         console.log(dismountRequirement);
         console.log("Shape requirement is");
