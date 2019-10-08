@@ -11,7 +11,7 @@ let swapLocation;
 
 let x = 25;
 let y = 100;
-let incredment = 50;
+let incredment = 5;
 let height = 100;
 let width = 100;
 
@@ -387,14 +387,14 @@ function setup() {
 
 
     arrayOfRoutineSkills = [
-                new Skill("missing skill", "0", "nonsalto", "empty", 25, 400, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 150, 400, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 275, 400, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 400, 400, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 25, 525, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 150, 525, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 275, 525, 100, 100),
-                new Skill("missing skill", "0", "nonsalto", "empty", 400, 525, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 25, 300, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 150, 300, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 275, 300, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 400, 300, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 25, 425, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 150, 425, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 275, 425, 100, 100),
+                new Skill("missing skill", "0", "nonsalto", "empty", 400, 425, 100, 100),
             ]
 
 
@@ -450,6 +450,7 @@ function setStartValue() {
         }
 
 
+        //CHANGE TO LOOK FOR LAST SALTO IN ROUTINE NOT LAST ELEMENT
         //checks dismount salto/last salto in routine
         if (arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].salto === "salto" && arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].letter === "b") {
             dismountRequirement = "met";
@@ -502,7 +503,7 @@ function drawStartValue() {
     //erase previous number
     canvasColor = color(122, 244, 222);
     fill(canvasColor);
-    rect(25, 0, 100, 100);
+    rect(25, 0, 200, 100);
 
     //draw new number    
     fill(color(42, 104, 112));
