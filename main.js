@@ -432,6 +432,7 @@ function setStartValue() {
         let c = 0;
 
         let turnRequirement = "missing";
+        let leapRequirement = "missing";
         let dismountRequirement = "missing";
         let shapeRequirement = "missing";
 
@@ -449,12 +450,18 @@ function setStartValue() {
             if (arrayOfRoutineSkills[i].letter === "c") {
                 c = c + 1;
             }
+            //checks if leap is in routine
+            if (arrayOfRoutineSkills[i].type === "leap") {
+                leapRequirement = "met";
+            }
             //checks turn to be a B or C
             if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "b") {
                 turnRequirement = "met";
             } else if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "c") {
                 turnRequirement = "met";
             }
+        
+            
         }
 
 
@@ -537,6 +544,9 @@ function setStartValue() {
 
 
         if (turnRequirement === "missing") {
+            startValue = startValue - 0.2;
+        }
+        if (leapRequirement === "missing") {
             startValue = startValue - 0.2;
         }
         //A dismount will result in .1 deductions vs no salto = -0.2
