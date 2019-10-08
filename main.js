@@ -9,6 +9,7 @@ let startValue;
 
 let swapLocation;
 
+
 let x = 25;
 let y = 100;
 let incredment = 5;
@@ -362,6 +363,7 @@ var myp5 = new p5(t, 'left-container');
 //SETUP FOR CANVAS
 function setup() {
 
+    
     canvas2 = createCanvas(2000, 1000);
     noStroke();
     background(color(0, 0, 0));

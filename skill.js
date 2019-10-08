@@ -1,3 +1,15 @@
+//attempt to fix color error below
+//fixed color, but not fill
+let whiteColor;
+let grayColor;
+
+function setup() {
+    whiteColor = color('rgb(255, 255, 255)');
+    grayColor = color(200, 200, 200);
+}
+
+//attempt to fix color error above
+
 class Skill {
     constructor(name, letter, salto, type, x, y, height, width, highlightColor) {
 
@@ -12,7 +24,7 @@ class Skill {
         this.height = height;
         this.width = width;
 
-        this.highlightColor = color('rgb(255, 255, 255)');
+        this.highlightColor = whiteColor;
         
 
         //image
@@ -23,7 +35,7 @@ class Skill {
 
 
     drawSkill() {
-        fill(200);
+        fill(color(200, 200, 200));
         
         rect(this.x, this.y, this.width, this.height);
 
