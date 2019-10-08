@@ -362,11 +362,11 @@ var myp5 = new p5(t, 'left-container');
 //SETUP FOR CANVAS
 function setup() {
 
-    //canvas2 = createCanvas(2000, 1000);
-    //noStroke();
-    //background(color(0, 0, 0));
+    canvas2 = createCanvas(2000, 1000);
+    noStroke();
+    background(color(0, 0, 0));
 
-    //canvas2.parent('left-container');
+    canvas2.parent('left-container');
 
     canvas = createCanvas(800, 800);
     noStroke();
@@ -426,7 +426,6 @@ function setStartValue() {
         let turnRequirement = "missing";
         let saltoRequirement = "missing";
         let dismountRequirement = "missing";
-        console.log(turnRequirement);
 
         //checks # of As, Bs, and Cs. turnRequirement and salto
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -449,11 +448,6 @@ function setStartValue() {
                 turnRequirement = "met";
             }
         }
-
-        console.log(turnRequirement);
-        console.log(a);
-        console.log(b);
-        console.log(c);
 
 
         //checks dismount salto/last salto in routine

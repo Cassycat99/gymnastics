@@ -12,7 +12,7 @@ class Skill {
         this.height = height;
         this.width = width;
 
-        this.highlightColor = color(255, 255, 255);
+        this.highlightColor = color('rgb(255, 255, 255)');
         
 
         //image
