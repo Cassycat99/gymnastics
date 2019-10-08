@@ -368,7 +368,7 @@ function setup() {
 
     canvas2.parent('left-container');
 
-    canvas = createCanvas(800, 800);
+    canvas = createCanvas(1000, 1000);
     noStroke();
     background(color(122, 244, 222));
 
@@ -382,7 +382,12 @@ function setup() {
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
                 new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
-                new Skill("540 turn", "b", "nonsalto", "turn", (x + 4 * width + 4 * incredment), y, height, width)
+                new Skill("540 turn", "b", "nonsalto", "turn", (x + 4 * width + 4 * incredment), y, height, width),
+                new Skill("back tuck", "a", "salto", "saltos backwards", (x + 5 * width + 5 * incredment), y, height, width),
+                new Skill("back tuck 180", "b", "salto", "saltos backwards", (x + 6 * width + 6 * incredment), y, height, width),
+                new Skill("back pike", "a", "salto", "saltos backwards", (x + 7 * width + 7 * incredment), y, height, width),
+                new Skill("back layout", "a", "salto", "saltos backwards", (x + 8 * width + 8 * incredment), y, height, width),
+
             ]
 
 
@@ -424,8 +429,8 @@ function setStartValue() {
         let c = 0;
 
         let turnRequirement = "missing";
-        let saltoRequirement = "missing";
         let dismountRequirement = "missing";
+        let shapeRequirement = "missing";
 
         //checks # of As, Bs, and Cs. turnRequirement and salto
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -450,40 +455,98 @@ function setStartValue() {
         }
 
 
-        //CHANGE TO LOOK FOR LAST SALTO IN ROUTINE NOT LAST ELEMENT
+        //CHECKS ALL SALTOS ARE DIFFERENT and LAST SALTO/DISMOUNT IS B OR C
+        let saltoCount = 0;
+        let lastSalto = 0;
+        let saltoName1;
+        let saltoName2;
+        let saltoName3;
+
+        //checks at least 3 saltos are different shapes
+        for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
+            if (arrayOfRoutineSkills[i].salto === "salto") {
+                saltoCount = saltoCount + 1;
+                lastSalto = i;
+
+                if (saltoCount === 1) {
+                    saltoName1 = arrayOfRoutineSkills[i].name;
+                } else if (saltoCount === 2 && saltoName1 != arrayOfRoutineSkills[i].name) {
+                    saltoName2 = arrayOfRoutineSkills[i].name;
+                } else if (saltoCount === 3 && saltoName1 != arrayOfRoutineSkills[i].name && saltoName2 != arrayOfRoutineSkills[i].name) {
+                    saltoName3 = arrayOfRoutineSkills[i].name;
+                }
+            }
+        }
+
+        if (saltoName1 != saltoName2 && saltoName2 != saltoName3 && saltoName1 != saltoName2) {
+            shapeRequirement = "met";
+        }
+
+
         //checks dismount salto/last salto in routine
-        if (arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].salto === "salto" && arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].letter === "b") {
+        if (arrayOfRoutineSkills[lastSalto].salto === "salto" && arrayOfRoutineSkills[lastSalto].letter === "b") {
             dismountRequirement = "met";
-        } else if (arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].salto === "salto" && arrayOfRoutineSkills[arrayOfRoutineSkills.length - 1].letter === "c") {
+        } else if (arrayOfRoutineSkills[lastSalto].salto === "salto" && arrayOfRoutineSkills[lastSalto].letter === "c") {
             dismountRequirement = "met";
+        } else if (arrayOfRoutineSkills[lastSalto].salto === "salto" && arrayOfRoutineSkills[lastSalto].letter === "a") {
+            dismountRequirement = "partially met";
         }
 
 
         //CALCULATES START VALUE
 
-        if (a <= 4) {
 
-            startValue = startValue - (0.1 * (4.0 - a));
+        //1 C can equal B in your routine
+        if (c >= 2) {
+            b = b + 1;
+            //for every C over 1, -0.2 deduction
+            startValue = (startValue - (0.2 * (c - 1)));
+            console.log("Additional Illegal Cs");
+            console.log(c - 1);
         }
 
-        //1 B can equal a C in your routine
         if (c === 1) {
             b = b + 1;
         }
 
-        if (c <= 2) {
-            b = b + 1;
-            startValue = (startValue - (0.2 * c));
-        }
-
         if (b <= 4) {
             startValue = (startValue - (0.2 * (4.0 - b)));
+            console.log("missing Bs");
+            console.log(4 - b);
+        }
+
+        //one additional B can equal a A
+        if (b >= 4) {
+            a = a + 1;
+        }
+
+        if (a <= 4) {
+            startValue = startValue - (0.1 * (4.0 - a));
+            console.log("missing As");
+            console.log(4 - a);
         }
 
 
         if (turnRequirement === "missing") {
             startValue = startValue - 0.2;
         }
+        //A dismount will result in .1 deductions vs no salto = -0.2
+        if (dismountRequirement === "partially met") {
+            startValue = startValue - 0.1;
+        }
+        if (dismountRequirement === "missing") {
+            startValue = startValue - 0.2;
+        }
+        if (shapeRequirement === "missing") {
+            startValue = startValue - 0.2;
+        }
+
+        console.log("Turn requirement is");
+        console.log(turnRequirement);
+        console.log("Dismount requirement is");
+        console.log(dismountRequirement);
+        console.log("Shape requirement is");
+        console.log(shapeRequirement);
 
         drawStartValue();
 
