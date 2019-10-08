@@ -1,5 +1,5 @@
 body {
-    background-color: rebeccapurple;
+    background-color: plum;
     height: 100%;
     overflow: auto;
     
@@ -8,8 +8,8 @@ body {
 #left-container {
     width: calc(100px);
     height: calc(100px);
-    color: aliceblue;
-    z-index: 1;
+    background-color: aliceblue;
+   
     
 }
 

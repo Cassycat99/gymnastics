@@ -15,7 +15,7 @@ let incredment = 50;
 let height = 100;
 let width = 100;
 
-let canvas2;
+//let canvas2;
 let canvas;
 
 
@@ -362,11 +362,11 @@ var myp5 = new p5(t, 'left-container');
 //SETUP FOR CANVAS
 function setup() {
 
-    canvas2 = createCanvas(2000, 1000);
-    noStroke();
-    background(color(0, 0, 0));
+    //canvas2 = createCanvas(2000, 1000);
+    //noStroke();
+    //background(color(0, 0, 0));
 
-    canvas2.parent('left-container');
+    //canvas2.parent('left-container');
 
     canvas = createCanvas(800, 800);
     noStroke();
