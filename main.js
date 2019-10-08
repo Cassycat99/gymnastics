@@ -383,10 +383,10 @@ function setup() {
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
                 new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
                 new Skill("540 turn", "b", "nonsalto", "turn", (x + 4 * width + 4 * incredment), y, height, width),
-                new Skill("back tuck", "a", "salto", "saltos backwards", (x + 5 * width + 5 * incredment), y, height, width),
-                new Skill("back tuck 180", "b", "salto", "saltos backwards", (x + 6 * width + 6 * incredment), y, height, width),
-                new Skill("back pike", "a", "salto", "saltos backwards", (x + 7 * width + 7 * incredment), y, height, width),
-                new Skill("back layout", "a", "salto", "saltos backwards", (x + 8 * width + 8 * incredment), y, height, width),
+                new Skill("back tuck", "a", "salto", "tuck", (x + 5 * width + 5 * incredment), y, height, width),
+                new Skill("back tuck 180", "b", "salto", "tuck", (x + 6 * width + 6 * incredment), y, height, width),
+                new Skill("back pike", "a", "salto", "pike", (x + 7 * width + 7 * incredment), y, height, width),
+                new Skill("back layout", "a", "salto", "layout", (x + 8 * width + 8 * incredment), y, height, width),
 
             ]
 
@@ -459,9 +459,9 @@ function setStartValue() {
         //CHECKS ALL SALTOS ARE DIFFERENT and LAST SALTO/DISMOUNT IS B OR C
         let saltoCount = 0;
         let lastSalto = 0;
-        let saltoName1;
-        let saltoName2;
-        let saltoName3;
+        let saltoType1 = "empty";
+        let saltoType2 = "empty";
+        let saltoType3 = "empty";
 
         //checks at least 3 saltos are different shapes
         for (let i = 0; i < arrayOfRoutineSkills.length; i++) {
@@ -470,17 +470,23 @@ function setStartValue() {
                 lastSalto = i;
 
                 if (saltoCount === 1) {
-                    saltoName1 = arrayOfRoutineSkills[i].name;
-                } else if (saltoCount === 2 && saltoName1 != arrayOfRoutineSkills[i].name) {
-                    saltoName2 = arrayOfRoutineSkills[i].name;
-                } else if (saltoCount === 3 && saltoName1 != arrayOfRoutineSkills[i].name && saltoName2 != arrayOfRoutineSkills[i].name) {
-                    saltoName3 = arrayOfRoutineSkills[i].name;
+                    saltoType1 = arrayOfRoutineSkills[i].type;
+                }
+
+                if (saltoCount === 2 && saltoType1 != arrayOfRoutineSkills[i].type) {
+                    saltoType2 = arrayOfRoutineSkills[i].type;
+                }
+
+                if (saltoCount === 3 && saltoType1 != arrayOfRoutineSkills[i].type && saltoType2 != arrayOfRoutineSkills[i].type) {
+                    saltoType3 = arrayOfRoutineSkills[i].type;
                 }
             }
         }
 
-        if (saltoName1 != saltoName2 && saltoName2 != saltoName3 && saltoName1 != saltoName2) {
-            shapeRequirement = "met";
+        if (saltoType1 != "empty" && saltoType2 != "empty" && saltoType3 != "empty") {
+            if (saltoType1 != saltoType2 && saltoType2 != saltoType3 && saltoType1 != saltoType2) {
+                shapeRequirement = "met";
+            }
         }
 
 
