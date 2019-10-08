@@ -411,6 +411,7 @@ function setup() {
 
 function setStartValue() {
 
+    console.log("New Routine");
     //CHECKS IF ALL SKILLS ARE MISSING, DON'T CALCULATE IF THEY ARE
 
     let missingSkills = 0;
