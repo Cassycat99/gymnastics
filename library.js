@@ -27,6 +27,17 @@ function preload() {
         
         //Cs
         
+                
+        new Skill("split leap 360", "c", "nonsalto", "leap", x, y, height, width, 1301),
+        
+        new Skill("split leap 360 split", "c", "nonsalto", "leap", x, y, height, width, 1302),
+        
+        new Skill("switch leap 1/2", "c", "nonsalto", "leap", x, y, height, width, 1304),
+        
+        new Skill("ring switch leap, "c", "nonsalto", "leap", x, y, height, width, 1305),
+                  
+        new Skill("split ring leap", "c", "nonsalto", "jump", x, y, height, width, 1309),
+        
         
         //JUMPS
         
@@ -61,11 +72,14 @@ function preload() {
         
         //Cs
         
-        new Skill("split leap 360", "c", "nonsalto", "leap", x, y, height, width, 1301),
+        new Skill("pike 360", "c", "nonsalto", "jump", x, y, height, width, 1301),
         
-        new Skill("split leap 360 split", "c", "nonsalto", "leap", x, y, height, width, 1302),
+        new Skill("straddle 360", "c", "nonsalto", "jump", x, y, height, width, 1301),
         
-        new Skill("switch leap 1/2", "c", "nonsalto", "leap", x, y, height, width, 1304),
+        new Skill("jump 720", "c", "nonsalto", "jump", x, y, height, width, 1310),
+        
+        new Skill("tuck jump 720", "c", "nonsalto", "jump", x, y, height, width, 1313),
+
         
         
         //HOPS
@@ -89,6 +103,10 @@ function preload() {
         new Skill("hop 180", "b", "nonsalto", "hop", x, y, height, width, 1212),
         
         //Cs
+        
+        new Skill("cat leap 720", "b", "nonsalto", "hop", x, y, height, width, 1211),
+        
+        new Skill("hop 360", "b", "nonsalto", "hop", x, y, height, width, 1312),
 
         
         //OTHER
