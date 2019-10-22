@@ -138,10 +138,88 @@ function preload() {
         
         new Skill("1080 turn", "c", "nonsalto", "turn", x, y, height, width, 2301),
         
+        //HANDSUPPORT ACRO
+        
+        //As
+        new Skill("handstand", "a", "nonsalto", "handstand", x, y, height, width, 3101),
+        
+        new Skill("dive roll", "a", "nonsalto", "handstand", x, y, height, width, 3102),
+        
+        new Skill("back extension roll 1/2 or 360", "a", "nonsalto", "handstand", x, y, height, width, 3103),
+        
+        new Skill("back walk over handstand 360", "a", "nonsalto", "handstand", x, y, height, width, 3104),
+        
+        new Skill("front hand spring/bounder", "a", "nonsalto", "acroflight", x, y, height, width, 3105),
+        
+        new Skill("round off", "a", "nonsalto", "acroflight", x, y, height, width, 3106),
+        
+        new Skill("back hand spring", "a", "nonsalto", "acroflight", x, y, height, width, 3107),
         
         
+        //Bs
         
-        //OTHER
+        new Skill("handstand 540-720", "b", "nonsalto", "handstand", x, y, height, width, 3201),
+        
+        new Skill("back extension roll 540-720", "b", "nonsalto", "handstand", x, y, height, width, 3203),
+        
+        new Skill("back hand spring 360", "b", "nonsalto", "acroflight", x, y, height, width, 3203),
+        
+        //Cs
+        
+        new Skill("front hand spring 360", "c", "nonsalto", "acroflight", x, y, height, width, 3305),
+        
+        
+        //SALTOS
+        
+        //As
+        
+        new Skill("front tuck", "a", "salto", "tuck", x, y, height, width, 4101),
+        
+        new Skill("front aerial", "a", "salto", "aerial", x, y, height, width, 4103),
+        
+        new Skill("side aerial", "a", "salto", "aerial", x, y, height, width, 4104),
+        
+        new Skill("side tuck", "a", "salto", "tuck", x, y, height, width, 4104),
+        
+        new Skill("side pike", "a", "salto", "pike", x, y, height, width, 4105),
+        
+        new Skill("back tuck", "a", "salto", "tuck", x, y, height, width, 5101),
+        
+        new Skill("back pike", "a", "salto", "pike", x, y, height, width, 51012),
+        
+        new Skill("back layout", "a", "salto", "layout", x, y, height, width, 51013),
+        
+        new Skill("whip back", "a", "salto", "layout", x, y, height, width, 5104),
+        
+        
+        //Bs
+        
+        new Skill("front pike", "b", "salto", "pike", x, y, height, width, 41012),
+        
+        new Skill("front tuck 1/2 or 360", "b", "salto", "tuck", x, y, height, width, 4101),
+        
+        new Skill("front pike 1/2 or 360", "b", "salto", "pike", x, y, height, width, 41012),
+        
+        new Skill("front layout 1/2 or 360", "b", "salto", "layout", x, y, height, width, 4101),
+        
+        new Skill("arabian tuck", "b", "salto", "tuck", x, y, height, width, 4205),
+        
+        new Skill("arabian pike", "b", "salto", "pike", x, y, height, width, 42052),
+        
+        new Skill("half or full layout", "b", "salto", "layout", x, y, height, width, 5201),
+        
+        new Skill("whip back 1/2", "b", "salto", "layout", x, y, height, width, 5204),
+                  
+        
+        //Cs
+        
+        new Skill("layout 1/2 or 360", "c", "salto", "layout", x, y, height, width, 4302),
+        
+        new Skill("540 or 720 layout", "c", "salto", "layout", x, y, height, width, 5301),
+        
+        new Skill("whip back 360", "c", "salto", "layout", x, y, height, width, 5304),
+        
+        //TEST
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
 
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
