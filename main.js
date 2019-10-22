@@ -362,27 +362,27 @@ var myp5 = new p5(t, 'left-container');
 
 var img1101;
 
-function preload(){
+function preload() {
 
-/*
-Banana Due set up to draw images
-{
-  // Have to load the array of animation frame images in preload(),
-  // so have to declare it as a global in Main.
-  anim = new Array(nFrms);
-  
-  // Reads image files from "Banana" folder, which is in the Project folder.
-  // We have to know how many images there are and what their names are, but
-  // if we're clever in setting them up with a number starting at 0, it's easy
-  for (var i = 0; i < nFrms; i++)
+    /*
+    Banana Due set up to draw images
     {
-      // Number in the file name matches the array offset & loop counter i
-      anim[i] = loadImage ("Banana/Banana" + i + ".png");
-    }
-    */
-    
-    img1101 = loadImage ("skills/1101.png");
-    
+      // Have to load the array of animation frame images in preload(),
+      // so have to declare it as a global in Main.
+      anim = new Array(nFrms);
+      
+      // Reads image files from "Banana" folder, which is in the Project folder.
+      // We have to know how many images there are and what their names are, but
+      // if we're clever in setting them up with a number starting at 0, it's easy
+      for (var i = 0; i < nFrms; i++)
+        {
+          // Number in the file name matches the array offset & loop counter i
+          anim[i] = loadImage ("Banana/Banana" + i + ".png");
+        }
+        */
+
+    img1101 = loadImage("skills/1101.png");
+
 }
 
 
@@ -390,7 +390,7 @@ Banana Due set up to draw images
 //SETUP FOR CANVAS
 function setup() {
 
-    
+
     canvas2 = createCanvas(2000, 1000);
     noStroke();
     background(color(0, 0, 0));
@@ -408,13 +408,21 @@ function setup() {
 
     libraryOfSkills = [
                 new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width, img1101),
+
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
+
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
+
                 new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
+
                 new Skill("540 turn", "b", "nonsalto", "turn", (x + 4 * width + 4 * incredment), y, height, width),
+
                 new Skill("back tuck", "a", "salto", "tuck", (x + 5 * width + 5 * incredment), y, height, width),
+
                 new Skill("back tuck 180", "b", "salto", "tuck", (x + 6 * width + 6 * incredment), y, height, width),
+
                 new Skill("back pike", "a", "salto", "pike", (x + 7 * width + 7 * incredment), y, height, width),
+
                 new Skill("back layout", "a", "salto", "layout", (x + 8 * width + 8 * incredment), y, height, width),
 
             ]
@@ -487,8 +495,8 @@ function setStartValue() {
             } else if (arrayOfRoutineSkills[i].type === "turn" && arrayOfRoutineSkills[i].letter === "c") {
                 turnRequirement = "met";
             }
-        
-            
+
+
         }
 
 
