@@ -11,7 +11,7 @@ function setup() {
 //attempt to fix color error above
 
 class Skill {
-    constructor(name, letter, salto, type, x, y, height, width, highlightColor) {
+    constructor(name, letter, salto, type, x, y, height, width, imageName) {
 
         this.name = name; //Name of skill
         this.letter = letter; //A, B, C (D, E, F)
@@ -24,10 +24,10 @@ class Skill {
         this.height = height;
         this.width = width;
 
+        this.image = imageName;
+        
         this.highlightColor = whiteColor;
         
-
-        //image
 
         this.drawSkill()
 
@@ -43,7 +43,8 @@ class Skill {
         textSize(10);
         text(this.name, this.x + 18, this.y + 88);
 
-        //add to total point value w/ logic
+        //DRAW IMAGE
+        //image(this.anim[this.curF], this.xLoc, this.yLoc);
 
     }
 

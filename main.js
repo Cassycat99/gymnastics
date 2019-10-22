@@ -324,7 +324,7 @@ var t = function (p) {
 
                 // swapLocation = focus click
                 // i = new click
-
+/*
                 //take focus click and make name equal to new click
                 arrayOfRoutineSkills[i].name = arrayOfRoutineSkills[swapLocation].name;
                 arrayOfRoutineSkills[i].letter = arrayOfRoutineSkills[swapLocation].letter;
@@ -360,6 +360,30 @@ var myp5 = new p5(t, 'left-container');
     
     */
 
+
+function preload()
+
+/*
+Banana Due set up to draw images
+{
+  // Have to load the array of animation frame images in preload(),
+  // so have to declare it as a global in Main.
+  anim = new Array(nFrms);
+  
+  // Reads image files from "Banana" folder, which is in the Project folder.
+  // We have to know how many images there are and what their names are, but
+  // if we're clever in setting them up with a number starting at 0, it's easy
+  for (var i = 0; i < nFrms; i++)
+    {
+      // Number in the file name matches the array offset & loop counter i
+      anim[i] = loadImage ("Banana/Banana" + i + ".png");
+    }
+    */
+    
+}
+
+
+
 //SETUP FOR CANVAS
 function setup() {
 
@@ -380,7 +404,7 @@ function setup() {
 
 
     libraryOfSkills = [
-                new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width),
+                new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width, 1101),
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
                 new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
