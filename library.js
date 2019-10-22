@@ -41,6 +41,7 @@ function preload() {
         
         new Skill("wolf jump", "a", "nonsalto", "jump", x, y, height, width, 1114),
         
+        
         //Bs
         
         new Skill("sheep jump", "b", "nonsalto", "jump", x, y, height, width, 1206),
@@ -53,7 +54,18 @@ function preload() {
         
         new Skill("jump 360", "b", "nonsalto", "jump", x, y, height, width, 1209),
         
+        new Skill("tuck jump 360", "b", "nonsalto", "jump", x, y, height, width, 1213),
+        
+        new Skill("wolf jump 360", "b", "nonsalto", "jump", x, y, height, width, 1214),
+        
+        
         //Cs
+        
+        new Skill("split leap 360", "c", "nonsalto", "leap", x, y, height, width, 1301),
+        
+        new Skill("split leap 360 split", "c", "nonsalto", "leap", x, y, height, width, 1302),
+        
+        new Skill("switch leap 1/2", "c", "nonsalto", "leap", x, y, height, width, 1304),
         
         
         //HOPS
@@ -71,6 +83,10 @@ function preload() {
         new Skill("switch fouette-hop", "b", "nonsalto", "hop", x, y, height, width, 1201),
         
         new Skill("butterfly", "b", "nonsalto", "hop", x, y, height, width, 1203),
+        
+        new Skill("cat leap 360", "b", "nonsalto", "hop", x, y, height, width, 1211),
+        
+        new Skill("hop 180", "b", "nonsalto", "hop", x, y, height, width, 1212),
         
         //Cs
 
