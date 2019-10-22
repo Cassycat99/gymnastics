@@ -4,6 +4,8 @@
 function preload() {
     libraryOfSkills = [
         
+        //DANCE SKILLS
+        
         //LEAPS
         
         //As
@@ -34,7 +36,7 @@ function preload() {
         
         new Skill("switch leap 1/2", "c", "nonsalto", "leap", x, y, height, width, 1304),
         
-        new Skill("ring switch leap, "c", "nonsalto", "leap", x, y, height, width, 1305),
+        new Skill("ring switch leap", "c", "nonsalto", "leap", x, y, height, width, 1305),
                   
         new Skill("split ring leap", "c", "nonsalto", "jump", x, y, height, width, 1309),
         
@@ -108,6 +110,36 @@ function preload() {
         
         new Skill("hop 360", "b", "nonsalto", "hop", x, y, height, width, 1312),
 
+        
+        //TURNS
+        
+        //As
+        new Skill("360 turn", "a", "nonsalto", "turn", x, y, height, width, 2101),
+        
+        new Skill("360 tuck stand turn", "a", "nonsalto", "turn", x, y, height, width, 2106),
+        
+        //Bs
+        
+        new Skill("720 turn", "b", "nonsalto", "turn", x, y, height, width, 2201),
+        
+        new Skill("360 turn heel above horizontal", "b", "nonsalto", "turn", x, y, height, width, 2202),
+        
+        new Skill("360 split turn", "b", "nonsalto", "turn", x, y, height, width, 2203),
+        
+        new Skill("360 back attitude turn", "b", "nonsalto", "turn", x, y, height, width, 2204),
+        
+        new Skill("360 illusion", "b", "nonsalto", "turn", x, y, height, width, 2205),
+        
+        new Skill("720 tuck stand turn", "b", "nonsalto", "turn", x, y, height, width, 2206),
+        
+        new Skill("720 windmill", "b", "nonsalto", "turn", x, y, height, width, 2207),
+        
+        //Cs
+        
+        new Skill("1080 turn", "c", "nonsalto", "turn", x, y, height, width, 2301),
+        
+        
+        
         
         //OTHER
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
