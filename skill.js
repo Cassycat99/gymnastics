@@ -24,7 +24,7 @@ class Skill {
         this.height = height;
         this.width = width;
 
-        this.image = imageName;
+        this.imageName = imageName;
         
         this.highlightColor = whiteColor;
         
@@ -45,6 +45,8 @@ class Skill {
 
         //DRAW IMAGE
         //image(this.anim[this.curF], this.xLoc, this.yLoc);
+        console.log(this.imageName);
+        image(this.imageName, this.x, this.y);
 
     }
 

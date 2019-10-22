@@ -360,8 +360,9 @@ var myp5 = new p5(t, 'left-container');
     
     */
 
+var img1101;
 
-function preload()
+function preload(){
 
 /*
 Banana Due set up to draw images
@@ -379,6 +380,8 @@ Banana Due set up to draw images
       anim[i] = loadImage ("Banana/Banana" + i + ".png");
     }
     */
+    
+    img1101 = loadImage ("skills/1101.png");
     
 }
 
@@ -404,7 +407,7 @@ function setup() {
 
 
     libraryOfSkills = [
-                new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width, 1101),
+                new Skill("split leap forward", "a", "nonsalto", "leap", x, y, height, width, img1101),
                 new Skill("tuck jump", "a", "nonsalto", "jump", (x + width + incredment), y, height, width),
                 new Skill("pike jump", "b", "nonsalto", "jump", (x + 2 * width + 2 * incredment), y, height, width),
                 new Skill("360 turn", "a", "nonsalto", "turn", (x + 3 * width + 3 * incredment), y, height, width),
